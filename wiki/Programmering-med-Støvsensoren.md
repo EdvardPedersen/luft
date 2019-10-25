@@ -18,7 +18,7 @@ void loop() {
 
 ## Laste ned bibliotek helplink
 
-Akkurat som DHT-biblioteket vi brukte for temperatursensoren, finnes det et bibliotek for støvsensoren. Desverre oppstår det komplikasjoner med de andre sensorene i air:bit når vi bruker denne. Derfor har air:bit teamet laget sin egen versjon for dette biblioteket. Last ned den nyeste, dvs. den øverste, versjonen i listen du finner når du klikker på denne linken: (klikk der det står `zip`) **[SDS011 biblioteket](https://github.com/skolelab/SDS011/releases)**  
+Akkurat som DHT-biblioteket vi brukte for temperatursensoren, finnes det et bibliotek for støvsensoren. Desverre oppstår det komplikasjoner med de andre sensorene i air:bit når vi bruker denne. Derfor har air:bit teamet laget sin egen versjon for dette biblioteket. Last ned den nyeste, dvs. den øverste, versjonen i listen du finner når du klikker på denne linken: (klikk der det står `airbit-teacher-workshop `) **[SDS011 biblioteket](https://github.com/skolelab/SDS011/releases)**  
 Det er viktig at du lagrer (**ikke åpner**) filen. Husk hvor du lagrer filen, vi må finne frem den filen i neste steg.
 
 Etter du har lastet ned biblioteket og lagret filen må vi installere biblioteket i `Arduino IDE`. Klikk i menyen på `Sketch`&rarr;`Include library`&rarr;`Add ZIP library` (punktet under `Manage libraries`). Velg filen du nettopp lastet ned. Om nettleseren din ikke ba deg om å velge hvor filen skulle lagres, vil du mest sannsynligvis finne den under `Downloads` (`Nedlastinger`).

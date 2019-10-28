@@ -24,6 +24,8 @@ Hvis vi har lyst til å blinke både med det røde og det grønne LED-lyset kan 
 
 For øyeblikket vil et av lysene alltid være på. Hvis vi har lyst til å unngå dette kan vi legge til enda en blokk. Blokken vi skal legge til heter _Delay_, og vi finner den under _Control_ sidefanen. Denne har igjen et tall som viser hvor lenge den programmet skal vente når den når denne biten av koden. Tallet gir tiden i millisekunder. Trekk denne blokken, og koble den til nederst på programmet.
 
+![][skjermbilde-LEDs-blockly]
+
 ## Ferdig
 
 Mye rart man kan gjøre med blinking og mange rare rytmer man kan få til her om man bare er litt kreativ, men hvis vi tar utgangspunkt i den helt kjedelige blinkingen i ett sekund mellomrom, vi du få kode som ligner på dette:
@@ -35,3 +37,4 @@ Mye rart man kan gjøre med blinking og mange rare rytmer man kan få til her om
 [home]: airbit-Programmering
 [pinout]: airbit-Pinout
 [dht]: Programmering-med-Temperatursensoren-Blockly
+[skjermbilde-LEDs-blockly]: skjermbilde-LEDs-blockly.png

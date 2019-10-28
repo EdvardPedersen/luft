@@ -13,7 +13,7 @@
 [hjem]: Home
 [guides]: airbit-Guider
 [building]: Guide-Bygging-og-Lodding
-[setup]: Guide-Oppsett-for-programmering
+[setup]: Oppsett-for-programmering
 [intro-programming]: Introduksjon-til-Arduino-programmering
 [airbit-programming]: airbit-Programmering
 [error-debugging]: Feilsøking-av-programmeringsfeil

@@ -35,7 +35,7 @@ Når man skriver kode vil man desverre alltids snuble over feil og lure på hvor
 **[Guide: Feilsøking under programmering][error-debugging]**
 
 [build]: Guide-Bygging-og-Lodding
-[prog-setup]: Guide-Oppsett-for-programmering
+[prog-setup]: Oppsett-for-programmering
 [intro-programming]: Introduksjon-til-Arduino-programmering
 [airbit-programming]: airbit-Programmering
 [error-debugging]: Feilsøking-av-programmeringsfeil

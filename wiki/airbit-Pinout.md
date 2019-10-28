@@ -1,4 +1,4 @@
-For å vite hvilke sensorer er koblet til hvilke pinner som du må bruke i programmet ditt brukes i vanlig elektronikk et koblingsskjema, eller det vi kaller en `pinout`.
+For å vite hvilke sensorer er koblet til hvilke pinner må du bruke det vi kaller en `pinout`.
 
 I bildet under vil du se pinout-skjemaet til air:bit.
 
@@ -8,7 +8,7 @@ I bildet under vil du se pinout-skjemaet til air:bit.
 
 ## Som tabell
 
-Om du heller vi se komponentene listet opp med sin tilsvarende pinne.
+Her er komponentene listet opp med sine tilsvarende pinner.
 
 | Komponent | Funskjon | Pinne |
 | --------- | -------- | ----- |
@@ -26,12 +26,12 @@ Om du heller vi se komponentene listet opp med sin tilsvarende pinne.
 
 ## Bruk
 
-Guidene for de forskjellige sensorene vil fortelle deg hvordan disse verdiene for pinnene skal brukes. I utgangspunketet kan man plugge inn sensorer på hvilken som helst pinne i Arduinoen, men da må man forklare til Arduinoen fra hvilken pinne han skal lese data for hvilken sensor. Det er dette pinout skjemaet brukes til.
+Guidene for de forskjellige sensorene vil fortelle deg hvordan verdiene for pinnene skal brukes. I utgangspunktet kan man plugge inn sensorer på hvilken som helst pinne i Arduinoen, men da må man forklare til Arduinoen fra hvilken pinne han skal lese data for hvilken sensor.
 
 ## Gå videre
 
 &uarr; [Gå til **innholdsfortegnelsen**][home]  
-&rarr; [Gå til neste steg **Kodelinje**: **LED-Blinking Kodeline**][led] 
+&rarr; [Gå til neste steg **Kodelinje**: **LED-Blinking Kodeline**][led]  
 &rarr; [Gå til neste steg **Blokk**: **LED-Blinking Blokk**][led-blockly]  
 
 [airbit-pinout-skjema]: Vaerlogger_v2.1_skjema.png

@@ -41,7 +41,7 @@ Temperatur og Fuktighet er verdier som representeres som kommatall. F.eks. et va
 Gå inn i sidefanen _Variables_ og hent ut to `Declare Variable` blokker. Gi begge typen `float` og gi dem navnene `temperature` og `humidity`. *Merk at variablene kan navngis hvordan som helst, men at vi gir dem disse navnene for å lettere huske hva de inneholder.*
 
 Hvis vi så går inn i sidefanen _Air:Bit; DHT_ kan vi se at det finnes to blokker, `Get DHT22 Temperature` og `Get DHT22 Humidity`. Koble `Get DHT22 Temperature` til `Declare Variable` blokken som heter _temperature_ og koble den andre blokken til _humidity_ deklarasjonsblokken.
-
+![][skjermbilde-get-DHT-blockly]
 I koden over ser du at variabler også kan initialiseres samtidig med deklarasjonen. Merk at kommatall bruker `.` (punktum) som komma-tegn.
 
 Etter disse blokkene er brukt vil den aktuelle verdien for temperatur og fuktighet være lagret i variablene, så vi kan skrive dem ut.
@@ -50,11 +50,15 @@ Inne i _Input/Output_ sidefanen finner vi blokker som heter `Serial Print` og `S
 
 Sett in en `Serial Print` blokk. Slett så sideblokken og åpne `Variables` sidefanen og velg `temperature` blokken. Koble den blokken til `Serial Print` blokken. Videre gå gjennom og print `C` med en `Serial Println` for å indikere at verdien er i Celsius. Gjør lignende for `humidity`, der legger vi til en `%` for å indikere at verdien er i prosent.
 
+![][skjermbilde-seriell-DHT-blockly]
+
 Helt til slutt vil vi vente en liten stund til det leses av en ny måling. Bruk `Delay`-blokken for dette.
 
 ## Ferdig
 
 Siden variabler kan navngis som du ønsker kan koden din se litt anderledes ut, men hovedsakelig burde ting se ut som vist under.
+
+![][skjermbilde-DHT-blockly]
 
 ## Gå videre
 
@@ -75,3 +79,8 @@ Siden variabler kan navngis som du ønsker kan koden din se litt anderledes ut, 
 [library-manager-simple-dht]: Arduino-IDE-Library-Manager-SimpleDHT.png
 [library-manager-dht-sensor-library]: Arduino-IDE-Library-Manager-DHTSensorLibrary.png
 [adafruit_sensor-download]: GitHub-Adafruit_Sensor-download.png
+
+[skjermbilde-DHT-blockly]: skjermbilde-DHT-blockly.png
+[skjermbilde-get-DHT-blockly]: skjermbilde-get-DHT-blockly.png
+[skjermbilde-seriell-DHT-blockly]: skjermbilde-seriell-DHT-blockly.png
+

@@ -1,4 +1,4 @@
-De enkleste komponentene på air:bit er LED lyspærene. Så for å starte med skal vi prøve å få dem til å blinke. Du kan senere bruke LED til å vise status på f.eks. GPS signalet eller blinke mens du tar målinger, osv. Det kan være en enkel måte å skjekke om alt er ok mens du går rundt og tar målinger. Husk at air:bit ikke har noen skjerm, og du vil neppe alltids ha med datamaskinen din for å kunne snakke direkte med Arduinoen.
+De enkleste komponentene på air:bit er LED lyspærene. Til å starte med skal vi prøve å få dem til å blinke. Du kan senere bruke LED til å vise status på f.eks. GPS signalet eller blinke mens du tar målinger, osv. Det kan være en enkel måte å skjekke om alt er ok mens du går rundt og tar målinger. Husk at air:bit ikke har noen skjerm, og du vil neppe alltids ha med datamaskinen din for å kunne snakke direkte med Arduinoen.
 
 ## Komme i gang helplink
 
@@ -16,14 +16,14 @@ void loop() {
 
 Så må vi ta en titt på pinout skjemaet og finne hvilke pinner vi skal bruke for LED pærene. [Klikk her for å se **Pinout-skjemaet**][pinout]
 
-Fra skjemaet kan vi se at vi skal bruke pinne nummer `A1` for den blanke, rødt-lysende LED, og `A0` for den grønne LED. La oss definere to konstanter for dette i koden vår. Vi legger disse inn før `setup`-koden.
+Fra skjemaet kan vi se at vi skal bruke pinne nummer `A1` for den blanke, rødt-lysende LED-en, og `A0` for den grønne LED-en. La oss definere to konstanter for dette i koden vår. Vi legger disse inn før `setup`-koden.
 
 ``` cpp
 #define LED_RED   A1
 #define LED_GREEN A0
 ```
 
-Denne syntaksen som du ser i koden over har vi ikke brukt før. I motsetningen til å lage en variabel, deklarerer vi her to konstanter. Merk at vi gjerne bruker bare store bokstaver for konstanter. *Det kan også være fristende å bruke navn med norske tegn (f.eks. `LED_RØD`) her, men det er desverre ikke tillatt. Navn kan kun være små og store engelske bokstaver og siffrer.*
+Denne syntaksen som du ser i koden over har vi ikke brukt før. I motsetningen til å lage en variabel, deklarerer vi her to konstanter. Merk at vi gjerne bruker bare store bokstaver for konstanter. *Det kan også være fristende å bruke navn med norske tegn (f.eks. `LED_RØD`) her, men det er desverre ikke tillatt. Navn kan kun være små og store engelske bokstaver og siffer.*
 
 ## `setup` helplink
 
@@ -34,11 +34,11 @@ I setup koden vår må vi nå fortelle Arduinoen at vi har lyst å bruke pinnene
   pinMode(LED_GREEN, OUTPUT);
 ```
 
-Merk at dette ikke faktisk skrur på eller av strømmen til LED enda. Det bare setter opp Arduinoen slik at den vil kunne skru av og på strømmen med en senere kommando i `loop`. Vi ser også at vi har to instruksjoner her, én for hver pinne. Om du bare skal bruke en LED ved en senere anledning kunne du bare fjernet en av de to linjene. Vi kommer til å bruke begge LED i dette eksemplet, så vi må derfor sette opp begge pinnene.
+Merk at dette ikke skrur på eller av strømmen til LED-en enda. Det bare setter opp Arduinoen slik at den vil kunne skru av og på strømmen med en senere kommando i `loop`. Vi ser også at vi har to instruksjoner her, én for hver pinne. Om du bare skal bruke en LED ved en senere anledning kunne du bare fjernet en av de to linjene. Vi kommer til å bruke begge LED-ene i dette eksemplet, så vi må derfor sette opp begge pinnene.
 
 ## `loop` helplink
 
-Idéen er at vi skal blinke avvekslende med den røde og grønne LED på air:bit. Før vi skriver noen kode må vi først tenke over hvordan dette faktisk skjer, steg for steg.
+Idéen er at vi skal blinke vekslende mellom den røde og grønne LED på air:bit. Før vi skriver noen kode må vi først tenke over hvordan dette faktisk skjer, steg for steg.
 
 1. Skru på rød LED
 1. Vent i ett sekund
@@ -54,7 +54,7 @@ Fra [*Hello-World*-eksemplet][hello-world] i guiden for generell Arduino-program
 ```
 
 Digitale signaler er signaler som kun har to mulige verdier: Av og På.  
-Vi kan derfor tenke oss at å skru av og på strømmen til en LED er en form for et digitalt signal. La oss derfor bruke kommandoen `digitalWrite` for å skru av og på LEDene. Denne kommandoen tar pinnen den skal styre og verdien (Av eller På) som argument. Her bruker vi verdien `HIGH` for å skru på, og `LOW` for å skru av.
+Vi kan derfor tenke oss at å skru av og på strømmen til en LED er en form for et digitalt signal. La oss derfor bruke kommandoen `digitalWrite` for å skru av og på LED-ene. Denne kommandoen tar pinnen den skal styre og verdien (Av eller På) som argument. Her bruker vi verdien `HIGH` for å skru på, og `LOW` for å skru av.
 
 ```cpp
   digitalWrite(LED_GREEN, HIGH); // Turn on green LED.
@@ -65,7 +65,7 @@ Prøv å oversett stegene vi skrev på norsk i opplistingen over, og skriv ned k
 
 ## Ferdig
 
-Mye rart man kan gjøre med blinking og mange rare rytmer man kan få til her om man bare er litt kreativ, men hvis vi tar utgangspunkt i den helt kjedelige blinkingen i ett sekund mellomrom, vi du få kode som ligner på dette:
+Koden ser nå noe sånt som det her ut:
 
 ```cpp
 #define LED_RED   A1

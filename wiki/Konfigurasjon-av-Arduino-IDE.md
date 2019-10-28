@@ -40,7 +40,7 @@ Du kan senere alltids gå tilbake til innstillingene senere og endre på dem om 
 &larr; [Gå tilbake til forrige steg: **Start Arduino IDE**][start-arduino-ide]  
 &rarr; [Gå til neste steg: **Laste opp tom sketch**][upload-empty-sketch]  
 
-[setup-home]: Guide-Oppsett-for-programmering
+[setup-home]: Oppsett-for-programmering
 [start-arduino-ide]: Start-Arduino-IDE
 [upload-empty-sketch]: Laste-opp-tom-sketch-til-Arduinoen
 

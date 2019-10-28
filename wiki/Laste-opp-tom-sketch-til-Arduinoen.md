@@ -33,7 +33,7 @@ Du har nå fullført oppsett av din datamaskin og `Arduino IDE`. Du er nå klar 
 &larr; [Gå tilbake til forrige steg: **Konfigurasjon av Arduino IDE**][config-arduino-ide]  
 &darr; [Gå til: **Guider**][guides-home]  
 
-[setup-home]: Guide-Oppsett-for-programmering
+[setup-home]: Oppsett-for-programmering
 [config-arduino-ide]: Konfigurasjon-av-Arduino-IDE
 [guides-home]: airbit-Guider
 [upload-empty]: Arduino-IDE-Upload-empty.png

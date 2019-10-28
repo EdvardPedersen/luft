@@ -19,7 +19,7 @@ Etter Installasjonsfilen er lastet ned, må vi kjøre Installasjonsprogrammet. I
 &uarr; [Gå til **innholdsfortegnelsen**][setup-home]  
 &rarr; [Gå til neste steg: **Start Arduino IDE**][start-arduino-ide]
 
-[setup-home]: Guide-Oppsett-for-programmering
+[setup-home]: Oppsett-for-programmering
 [start-arduino-ide]: Start-Arduino-IDE
 
 [Arduino-Software-Page]: https://www.arduino.cc/en/Main/Software

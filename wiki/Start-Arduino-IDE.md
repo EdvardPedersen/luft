@@ -22,7 +22,7 @@ void loop() {
 &larr; [Gå tilbake til forrige steg: **Laste ned Arduino IDE**][install-arduino-ide]  
 &rarr; [Gå til neste steg: **Konfigurasjon av Arduino IDE**][config-arduino-ide]  
 
-[setup-home]: Guide-Oppsett-for-programmering
+[setup-home]: Oppsett-for-programmering
 [install-arduino-ide]: Laste-ned-Arduino-IDE
 [config-arduino-ide]: Konfigurasjon-av-Arduino-IDE
 

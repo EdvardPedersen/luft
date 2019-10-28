@@ -4,9 +4,9 @@ Selv om guidene vil innholde en del kodeekssempler, vi du likevel være nødt ti
 
 ## Innhold
 
-Det er flere måter å programmere på, to av dem er _Kodelinje programmering_ og _Block programmering_. _Kodelinje programmering_ er den mest vanlige formen for programmering når man skal arbeide innenfor et IT-yrke. _Block programmering_ derimot blir sett på som lettere å lære ettersom man abstraherer vekk en del av detaljene.
+Det er flere måter å programmere på, to av dem er _Kodelinje programmering_ og _Blokkprogrammering_. _Kodelinje programmering_ er den mest vanlige formen for programmering når man skal arbeide innenfor et IT-yrke. _Blokkprogrammering_ derimot blir sett på som lettere å lære ettersom man abstraherer vekk en del av detaljene.
 
-| Steg   |   Kodeline programmering    | Block programmering               |
+| Steg   |   Kodelinje programmering   | Blokkprogrammering               |
 | ------ |:---------------------------:| ---------------------------------:|
 |   1    |   [Pinout][pinout]          |  [Pinout][pinout]                 |
 |   2    |   [LED-Blinking][led]       |  [LED-Blinking][led-blockly]      |
@@ -17,7 +17,7 @@ Det er flere måter å programmere på, to av dem er _Kodelinje programmering_ o
 
 ## Steg 1
 
-Aller først skal vi ta en titt på pinout skjemaet til airbit og forklare hvordan airbit er koblet sammen. Dette steget er det samme både for _Kodelinje programmering_ og _Block programmering_. Klikk [her][pinout] for å til første steg:  
+Aller først skal vi ta en titt på pinout skjemaet til airbit og forklare hvordan airbit er koblet sammen. Dette steget er det samme både for _Kodelinje programmering_ og _Blokkprogrammering_. Klikk [her][pinout] for å til første steg:  
 [Steg 1: **Pinout**][pinout]
 
 -----

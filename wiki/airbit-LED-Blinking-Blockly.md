@@ -2,7 +2,7 @@ De enkleste komponentene på air:bit er LED lyspærene. Så for å starte med sk
 
 ## Komme i gang helplink
 
-Vi starter med en helt ny Sketch. Åpne opp en ny fane med [BlocklyDuino](http://airbit.uit.no:8080), som er _Block programmerings_-verktøyet vi skal bruke.
+Vi starter med en helt ny Sketch. Åpne opp en ny fane med [BlocklyDuino](http://airbit.uit.no:8080), som er _Blokkprogrammerings_-verktøyet vi skal bruke.
 
 Hvis du klikker på _Arduino_ kan vi se _tomme_ funksjonene for `setup` og `loop` som vi allerede har sett på tidligere.
 

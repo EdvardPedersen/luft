@@ -4,16 +4,20 @@ Selv om guidene vil innholde en del kodeekssempler, vi du likevel være nødt ti
 
 ## Innhold
 
-1. [Pinout][pinout]
-1. [LED-Blinking][led]
-1. [Temperaturlesing][dht]
-1. [Støvsensoren][pm]
-1. [GPS-Antenna][gps]
-1. [SD-kortet og filer][sd]
+Det er flere måter å programmere på, to av dem er _Kodelinje programmering_ og _Block programmering_. _Kodelinje programmering_ er den mest vanlige formen for programmering når man skal arbeide innenfor et IT-yrke. _Block programmering_ derimot blir sett på som lettere å lære ettersom man abstraherer vekk en del av detaljene.
+
+| Steg   |   Kodeline programmering    | Block programmering               |
+| ------ |:---------------------------:| ---------------------------------:|
+|   1    |   [Pinout][pinout]          |  [Pinout][pinout]                 |
+|   2    |   [LED-Blinking][led]       |  [LED-Blinking][led-blockly]      |
+|   3    |   [Temperaturlesing][dht]   |  [Temperaturlesing][dht-blockly]  |
+|   4    |   [Støvsensoren][pm]        |  [Støvsensoren][pm-blockly]       |
+|   5    |   [GPS-Antenna][gps]        |  [GPS-Antenna][gps-blockly]       |
+|   6    |   [SD-kortet og filer][sd]  |  [SD-kortet og filer][sd-blockly] |
 
 ## Steg 1
 
-Aller først skal vi ta en titt på pinout skjemaet til airbit og forklare hvordan airbit er koblet sammen. Klikk [her][pinout] for å til første steg:  
+Aller først skal vi ta en titt på pinout skjemaet til airbit og forklare hvordan airbit er koblet sammen. Dette steget er det samme både for _Kodelinje programmering_ og _Block programmering_. Klikk [her][pinout] for å til første steg:  
 [Steg 1: **Pinout**][pinout]
 
 -----
@@ -30,3 +34,9 @@ Aller først skal vi ta en titt på pinout skjemaet til airbit og forklare hvord
 [pm]: Programmering-med-Støvsensoren
 [gps]: Programmering-med-GPS-antenna
 [sd]: Programmering-av-filer-på-SD-kortet
+
+[led-blockly]: airbit-LED-Blinking-Blockly
+[dht-blockly]: Programmering-med-Temperatursensoren-Blockly
+[pm-blockly]: Programmering-med-Støvsensoren-Blockly
+[gps-blockly]: Programmering-med-GPS-antenna-Blockly
+[sd-blockly]: Programmering-av-filer-på-SD-kortet-Blockly

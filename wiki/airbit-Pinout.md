@@ -31,9 +31,11 @@ Guidene for de forskjellige sensorene vil fortelle deg hvordan disse verdiene fo
 ## Gå videre
 
 &uarr; [Gå til **innholdsfortegnelsen**][home]  
-&rarr; [Gå til neste steg: **LED-Blinking**][led]  
+&rarr; [Gå til neste steg **Kodelinje**: **LED-Blinking Kodeline**][led] 
+&rarr; [Gå til neste steg **Blokk**: **LED-Blinking Blokk**][led-blockly]  
 
 [airbit-pinout-skjema]: Vaerlogger_v2.1_skjema.png
 
 [home]: airbit-Programmering
 [led]: airbit-LED-Blinking
+[led-blockly]: airbit-LED-Blinking-blockly

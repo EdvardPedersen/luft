@@ -13,15 +13,6 @@ Det er viktig at du lagrer (**ikke åpner**) filen. Husk hvor du lagrer filen, v
 
 Etter du har lastet ned biblioteket og lagret filen må vi installere biblioteket i `Arduino IDE`. Åpne en `Arduino IDE`. Klikk i menyen på `Sketch`&rarr;`Include library`&rarr;`Add ZIP library` (punktet under `Manage libraries`). Velg filen du nettopp lastet ned. Om nettleseren din ikke ba deg om å velge hvor filen skulle lagres, vil du mest sannsynligvis finne den under `Downloads` (`Nedlastinger`).
 
-## tmp
-Konsulter så [pinout skjemaet][pinout]. Som vanlig definerer vi konstanter for pinnene som brukes for kommunikasjon med Arduinoen.
-
-``` cpp
-#define PM_TX 2
-#define PM_RX 3
-```
-
-
 ## `loop` helplink
 
 Som med temperatursensoren, skal vi lese ut målingene fra støvsensoren og skrive dem ut. Støvsensoren tar målinger av to forskjellige partikelstørrelser: 2.5µm og 10µm. Begge tall gir konsentrasjoner som desimaltall. Enheten for verdiene er i `µg/m³` (mikrogram per kubikkmeter)

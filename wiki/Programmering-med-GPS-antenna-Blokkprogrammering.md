@@ -4,17 +4,7 @@ Bruk av LED-lysene for å vise GPS signal kan være en god idé, siden det fort 
 
 ## Ny Sketch
 
-Igjen starter vi med en helt ny Sketch. `File`&rarr;`New` i menyen.
-
-``` cpp
-void setup () {
-
-}
-
-void loop() {
-
-}
-```
+Igjen vil vi starte med en tom Sketch. Du kan klikke på _Discard_ knappen for å slette den tidligere koden. Du kan også trykke på _Save XML_ for å lagre prosjektet til senere.
 
 ## Laste ned og installere `TinyGPS++` biblioteket helplink
 
@@ -24,137 +14,34 @@ Igjen skal vi bruke et bibliotek du ikke finner i `Library Manager`. Klikk på f
 
 Klikk på den store grønne pilen der det står Download. Husk å ikke åpne filen, men lagre den!
 
-I `Arduino IDE`, finn menyen `Sketch`&rarr;`Include library`&rarr;`Add ZIP library` og velg filen du nettopp lastet ned.
+Åpne en `Arduino IDE`. I `Arduino IDE` programmet, finn menyen `Sketch`&rarr;`Include library`&rarr;`Add ZIP library` og velg filen du nettopp lastet ned.
 
-## Globale definisjoner helplink
+## TMP
 
-I likhet med `SDS011`-biblioteket du brukte for støvsensoren, bruker også `TinyGPS++` `SoftwareSerial`-biblioteket. Navnet for `#include` direktivet for `TinyGPS++`-biblioteket er `<TinyGPS++.h>`. Legg til begge `#include`-direktivene i toppen av sketchen din.
-
-Så sjekker du [pinout skjemaet][pinout] for `RX` og `TX` pinnene for GPS-antennen og lager definisjoner for disse. Vi må også lage definisjoner for LED-lysene våre, siden vi skal bruke de også.
-
-Merk at GPS-antennen har `RX`- og `TX`-linjer. `RX`-linjen er linjen GPS-antennen får kommandoer fra Arduinoen over (`RX` for *receive transmission*). `TX`-linjen er linjen GPS-antennen sender data over til Arduinoen (`TX` for *transmit transmission*). På Arduinoen derimot er det omvendt, siden Arduinoen må **lytte** på linjen GPSen *sender* på, og må **sende** på linjen GPSen *lytter* på. Derfor må vi bytte om på verdiene for `RX` og `TX` på Arduinoen. Så `GPS_RX` blir `7` og `GPS_TX` blir `6`.
-
-`SDS011`-biblioteket tar seg automatisk av håndteringen for seriell-kommunikasjonen med støvsensoren. `TinyGPS++` gjør desverre ikke det samme for GPS-en. Derfor trenger vi en variabel som styrer kommunikasjonen til GPS-en.
-
-``` cpp
-SoftwareSerial gpsCom(GPS_RX, GPS_TX);
-```
-
-Variabel-deklarasjonen i linja over ser litt uvanlig ut. Datatypen er `SoftwareSerial`, navnet på variabelen er `gpsCom`. Verdiene `GPS_TX` og `GPS_RX` er konstantene for GPS-pinnene på Arduinoen (det kan hende at du gir dem andre navn i din kode).
-
-Til slutt må vi også lage en variabel som representerer selve sensoren. Her bruker vi nå datatypen som følger med `TinyGPS++`-biblioteket, den heter `TinyGPSPlus`.
-
-``` cpp
-TinyGPSPlus gps;
-```
-
-## `setup` helplink
-
-Husk at vi må bruke `pinMode`-kommandoen for å aktivere kontroll over LED-lysene på Arduinoen. Husk at `OUTPUT` skal brukes som andre argument (i tillegg til hvilken pinne du skal aktivere).
-
-Bruk `Serial.begin`-kommandoen for å starte opp seriell kommunikasjonen med datamaskinen over USB. Bruk verdien `9600` som argument her.
-
-Deretter må vi starte opp kommunikasjonen med GPS-antennen. Dette er også en helt vanlig seriell-kommunikasjon, bare at vi bruker `gpsCom`-variabelen i stedet for `Serial`, så det blir:
-
-``` cpp
-  gpsCom.begin(9600);
-```
-
-## `loop` helplink
+*Merk at vi kaller `!` for **NOT**-operatoren. Dvs. betingelsen leses som: NOT isUseful*
+## Kodeblokker helplink
 
 GPS-en forteller oss om den har en gyldig posisjon. I tillegg til å printe ut teksten over USB-ledningen til datamaskinen vil vi bruke LED-lysene for å blinke grønt når vi har kontakt med GPS-satellittene, og blinke rødt når vi ikke får kontakt med satellittene. Dette betyr at vi må gjøre litt sjekking etter feilkoder.
 
-Først må vi instruere Arduinoen til å *høre* etter innkommende data fra GPSen. Vi bruker `listen`-kommandoen til `gpsCom`-variabelen for dette.
+Først må vi instruere Arduinoen til å prøve å oppdatere GPS informasjonen sin. Vi bruker `GPS update Data`-blokken i _Air:Bit; GPS_ sidefanen for å gjøre dette. Blokken vil *høre* etter innkommende data fra GPS-en, samt forsikre seg om at en fullstending GPS måling blir gjort.
 
-``` cpp
-  gpsCom.listen();
-```
+Vi kan se at de fleste `GPS`-blokkene krever en `GPS_RX` og en `GPS_TX` verdi. De riktige verdiene for disse kan du finne i [pinout skjemaet][pinout]. Verdiene vil være `RX` og `TX` pinnene for GPS-antennen.
 
-En tommelfingerregel i programmering er at man bør gjøre håndtering av feil øverst i kodeblokkene sine. Dvs. sjekk først for alle feil. Dette er fordi det som regel er enklere å teste mot spesifikke feilbetingelser. Når det gjelder avlesning av sensorer (eller GPS-en) er det vanlig å prøve å lese av verdier i en løkke slik at man er sikret målinger for resten av programmet.
+![][skjermbilde-update-GPS-blockly]
 
-Det første vi kan sjekke er om GPS-en har sendt noe data. Vi kan bruke `available`-kommandoen til `gpsCom`-variabelen vår for å se om det har kommet inn ny GPS data, som ikke har blitt evaluert. Som vi sa nettopp, skal vi sjekke mot feil eller ugyldige statuser først. Dvs. vi vil sjekke om vi **ikke** har ny data tilgjengelig. Vi kan bruke `!` operatoren i C++ for å negere en påstand:
+En tommelfingerregel i programmering er at man bør gjøre håndtering av feil øverst i kodeblokkene sine. Dvs. sjekk først for alle feil. Dette er fordi det som regel er enklere å teste mot spesifikke feilbetingelser. 
 
-*Merk at vi kaller `!` for **NOT**-operatoren. Dvs. betingelsen leses som: NOT isUseful*
+Etter denne blokken kan vi være sikre på at vi har fått informasjon fra GPS-en. La oss nå sjekke om vi har en gyldig posisjon. Vi bruker `GPS is Valid`-blokken for dette. Denne blokken returner enten `true` eller `false`, altså er det en sannhetsverdi (`bool`) verdi. Deklarer en variabel med navnet `gpsvalid`, gi den typen `bool` og koble `GPS`-blokken til den.  til `gps`-variabelen for dette. 
 
-``` cpp
-  if (!gpsCom.available()) {
-    // No new data available.
-  }
-```
+Dersom du har oppnådd kontakt med satellitter for å så ha mistet kontakten igjen (f.eks. fordi du går inn i en tunnel, et hus med tykke vegger, o.l.) vil `GPS is Valid`-blokken fortsette å gi `true` som svar, derfor må vi også sjekke om dataen har blitt oppdatert siden siste gang vi leste av. Vi bruker `GPS is Updated`-blokken for dette. Deklarer en ny `bool` variabel som tar imot denne verdien.
 
-Merk at det ofte er lurt å skrive ut hele `if`-, `while`, eller `do`-blokken med en gang. Vi kan fylle ut kode mellom krøllparantesene (`{`, `}`) etterpå. På denne måten glemmer du ikke å skrive inn parantesene eller krøllparantesene som må være her. `if` og `while`-blokker ser **alltid** nøyaktig ut som vist over.
+![][skjermbilde-variables-GPS-blockly]
 
-I betingelsen over ser du at vi bruker `gpsCom.available()` for å sjekke om data er tilgjengelig. Denne kommandoen vil svare med verdien `true` dersom det er data tilgjengelig. `!` vil så negere denne verdien. Det vil si at denne betingelsen sjekker om det **ikke** er data tilgjengelig.
+Får at GPS informasjonen skal være nyttig må den være både _Valid_ of _Updated_. For å sjekke om begge variablene er sanne bruker vi en `Logical AND`-blokk, som vi finner under _Logic_ sidefanen. `Logical And` betyr *OG*, dvs. både høyre og venstre betingelse må være `true` for at hele betingelsen skal være `true`.
 
-Nå som vi har forsikret oss om at vi har data tilgjengelig kan vi lese inn den nye dataen GPS-en har sendt. Vi kommer nå til å bruke to kommandoer inni hverandre. Innerst bruker vi `gpsCom.read()` for å lese data, og rundt dette bruker vi `gps.encode()` for å tolke dataen vi har mottatt:
+Trekk en `Logical AND`-blokk ut og koble de to forrige verdiene til den. Deklarer en tredje `bool` variabel som heter `isuseful` som tar in verdien ifra `Logical And`-blokken, slik at verdien blir lagret.
 
-``` cpp
-  gps.encode(gpsCom.read());
-```
-
-Merk også at `encode`-kommandoen gir oss en status-verdi. Denne vil være `true` dersom GPS-dataen ble avlest rett. For enkelhetens skyld burde vi nå lage oss en variabel som lagrer resultatet av linjen over.
-
-``` cpp
-  bool gpsEncodeComplete;
-  gpsEncodeComplete = gps.encode(gpsCom.read());
-``` 
-
-Så kan vi gjøre en `if`-test på denne verdien også:
-
-``` cpp
-  if (!gpsEncodeComplete) {
-    // Not enough data to encode successfully yet
-  }
-```
-
-Nå må vi håndtere lese- og enkoderings-feilene. I prinsippet kommer begge feilene av at Arduinoen ikke enda har mottatt nok data fra GPSen, så det som må gjøres er å kjøre hele den koden vi nettop skrev i en løkke, helt til `gpsEncodeComplete` er `true`. Dette betyr at vi legger hele koden i en `do`-`while`-løkke.
-
-``` cpp
-  bool gpsEncodeComplete = false;
-  do {
-    if (!gpsCom.available()) {
-      // No new data available.
-    }
-    gpsEncodeComplete = gps.encode(gpsCom.read());
-    if (!gpsEncodeComplete) {
-      // Not enough data to encode successfully yet
-    }
-  } while (!gpsEncodeComplete); 
-```
-
-*Merk at vi flyttet deklarasjonen av `gpsEncodeComplete`-variabelen utenfor `do`-`while`-løkken og initialiserer den til `false` til å begynne med. Se [Bruk av variabler utenfor scope][debugging-var-out-of-scope] for å lære hvorfor.*
-
-Inni `if`-setningenene vil vi at Arduinoen starter en ny gjennomgang av `do`-`while`-løkken. I koden bruker vi `continue`-instruksjonen for dette:
-
-``` cpp
-  bool gpsEncodeComplete = false;
-  do {
-    if (!gpsCom.available()) {
-      // No new data available.
-      // Immediately jump to next iteration
-      continue;
-    }
-    gpsEncodeComplete = gps.encode(gpsCom.read());
-    if (!gpsEncodeComplete) {
-      // Not enough data to encode successfully yet
-      // Jump to next iteration and try again
-      continue;
-    }
-  } while (!gpsEncodeComplete); 
-```
-
-*Under testingen kan du godt legge til en `Serial.println` før `continue`-instruksjonen for å se at Arduinoen faktisk gjør noe.*
-
-Etter dette skriver vi koden som kjører når vi har klart å komme gjennom begge betingelsene uten å finne en feil (dvs. enten ingen data, eller ikke enda nok data). Nå kan vi være sikre på at vi har fått informasjon fra GPS-en og den har klart å tolke data som har kommet inn. La oss nå sjekke om vi har en gyldig posisjon. Vi bruker `location.isValid()`-kommandoen til `gps`-variabelen for dette. Igjen er `location.isValid()` en sannhetsverdi, så la oss sjekke mot usann, dvs. om tilfellet der vi ikke har en gyldig posisjon. Nå når vi har data bruker vi `if`-setninger for å sjekke betingelser:
-
-``` cpp
-  if (!gps.location.isValid()) {
-    // No valid position.
-    // I.e. no GPS fix.
-  }
-```
-
-Dersom du har oppnådd kontakt med satellitter for å så miste den igjen (f.eks. fordi du går inn i en tunnel, et hus med tykke vegger, o.l.) vil `location.isValid` fortsette å gi `true` som svar, derfor må vi også sjekke om dataen har blitt oppdatert siden siste gang vi leste av. Vi bruker `location.isUpdated` for dette, så vi endrer betingelsen og bruker `&&` for knytte to betingelser sammen. `&&` betyr *OG*, dvs. både høyre og venstre betingelse må være `true` for at hele betingelsen skal være `true`. For å negere uttrykket, settes det paranteser rundt hele uttrykket (se eksempel under).
+Hvis dataen ikke er brukbar, trenger vi ikke å gå videre i programmet. Trekk ut en `if - do`-blokk fra _Logic_ sidefanen.
 
 ``` cpp
   if (!(gps.location.isValid() && gps.location.isUpdated())) {
@@ -239,9 +126,6 @@ Avhengig av hvilke verdier du skrive ut, hvordan du navngir dine variabler, osv.
 [pinout]: airbit-Pinout
 [debugging-var-out-of-scope]: Feilsøking-av-programmeringsfeil#bruk-av-variabler-utenfor-scope
 
-
-![][skjermbilde-update-GPS-blockly]
-![][skjermbilde-variables-GPS-blockly]
 ![][skjermbilde-and-GPS-blockly]
 ![][skjermbilde-check-GPS-blockly]
 ![][skjermbilde-GPS-blockly]

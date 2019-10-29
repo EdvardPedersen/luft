@@ -271,7 +271,7 @@ void loop() {
 
 Å bare skrive verdien til en teller-variabel er kanskje litt kjedelig og gir ikke så mye mening. Men du har kanskje lagt merke til at det ikke er noe særlig forskjell fra å skrive til en seriell-kobling og å skrive til en fil på et SD-kort. Om du bare ser på koden i `loop`, og sammenligner med [teller-eksemplet som bruker seriell-kommunikasjon][counting-example], så ser du lite forskjell.
 
-Ved å kombinere koden fra dette eksempelet med koden fra de tidligere eksempelene, kan du nå lagre måålingene dine!
+Ved å kombinere koden fra dette eksempelet med koden fra de tidligere eksempelene, kan du nå lagre målingene dine!
 
 ## Gå videre
 

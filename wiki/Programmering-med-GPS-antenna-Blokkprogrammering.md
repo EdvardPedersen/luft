@@ -32,7 +32,7 @@ Vi kan se at de fleste `GPS`-blokkene krever en `GPS_RX` og en `GPS_TX` verdi. D
 
 ![][skjermbilde-update-GPS-blockly]
 
-Etter denne blokken kan vi være sikre på at vi har fått informasjon fra GPS-en. La oss nå sjekke om vi har en gyldig posisjon. Vi bruker `GPS is Valid`-blokken for dette. Denne blokken returner enten `true` eller `false`, altså er det en sannhetsverdi (`bool`) verdi. Deklarer en variabel med navnet `gpsvalid`, gi den typen `bool` og koble `GPS`-blokken til den.  til `gps`-variabelen for dette. 
+Etter denne blokken kan vi være sikre på at vi har fått informasjon fra GPS-en. La oss nå sjekke om vi har en gyldig posisjon. Vi bruker `GPS is Valid`-blokken for dette. Denne blokken returner enten `true` eller `false`, altså er det en sannhetsverdi (`bool`) verdi. Deklarer en variabel med navnet `gpsValid`, gi den typen `bool` og koble `GPS`-blokken til den.  til `gps`-variabelen for dette. 
 
 Dersom du har oppnådd kontakt med satellitter for å så ha mistet kontakten igjen (f.eks. fordi du går inn i en tunnel, et hus med tykke vegger, o.l.) vil `GPS is Valid`-blokken fortsette å gi `true` som svar, derfor må vi også sjekke om dataen har blitt oppdatert siden siste gang vi leste av. Vi bruker `GPS is Updated`-blokken for dette. Deklarer en ny `bool` variabel som tar imot denne verdien.
 
@@ -42,11 +42,11 @@ En tommelfingerregel i programmering er at man bør gjøre håndtering av feil �
 
 For at GPS informasjonen skal være nyttig må den være både _Valid_ of _Updated_. Man kan sjekke om begge variablene er sanne bruker ved å bruke en `Logical AND`-blokk, som vi finner under _Logic_ sidefanen. `Logical And` betyr *OG*, dvs. begge betingelse må være `true` for at hele betingelsen skal være `true`.
 
-Trekk en `Logical AND`-blokk ut og koble de forrige to blokkene til den. Deklarer en tredje `bool` variabel som heter `isuseful` som tar in verdien ifra `Logical And`-blokken, slik at verdien blir lagret.
+Trekk en `Logical AND`-blokk ut og koble de forrige to blokkene til den. Deklarer en tredje `bool` variabel som heter `isUseful` som tar in verdien ifra `Logical And`-blokken, slik at verdien blir lagret.
 
 ![][skjermbilde-and-GPS-blockly]
 
-Hvis dataen ikke er brukbar, trenger vi ikke å gå videre i programmet. Trekk ut en `if - do`-blokk fra _Logic_ sidefanen. Siden vi skal reagere på at `isuseful` ikke skal være sann, må vi transformere verdien for å kunne bruke den riktig i `if - do`-blokken. Vi må få en sann verdi når `isuseful` er usann, og omvendt. Dette gjør vi med en `not`-blokk, som vi finner under _Logic_ sidefanen.
+Hvis dataen ikke er brukbar, trenger vi ikke å gå videre i programmet. Trekk ut en `if - do`-blokk fra _Logic_ sidefanen. Siden vi skal reagere på at `isUseful` ikke skal være sann, må vi transformere verdien for å kunne bruke den riktig i `if - do`-blokken. Vi må få en sann verdi når `isUseful` er usann, og omvendt. Dette gjør vi med en `not`-blokk, som vi finner under _Logic_ sidefanen.
 
 Når vi ikke har brukbar data, har vi lyst til å blinke det røde lyset, for så å starte `loop`-funksjonen på nytt. Hvis vi har brukbar data, blinker vi med det grønne lyset istedet.
 
@@ -152,15 +152,15 @@ void loop()
 ## Gå videre
 
 &uarr; [Gå til **innholdsfortegnelsen**][home]  
-&larr; [Gå tilbake forrige neste steg: **Støvsensoren**][pm]  
-&rarr; [Gå til neste steg: **SD-kortet og filer**][sd]  
+&larr; [Gå tilbake forrige neste steg i Blokkprogrammeringen: **Støvsensoren**][pm]  
+&rarr; [Gå til neste steg i Blokkprogrammeringen: **SD-kortet og filer**][sd]  
 
 [tiny-gpp-dl-link]: http://arduiniana.org/libraries/tinygpsplus/
 [tiny-ggp-dl-img]: TinyGPSPlusPlus-library-download.png
 
 [home]: airbit-Programmering
-[pm]: Programmering-med-Støvsensoren
-[sd]: Programmering-av-filer-på-SD-kortet
+[pm]: Programmering-med-Støvsensoren-Blokkprogrammering
+[sd]: Programmering-av-filer-på-SD-kortet-Blokkprogrammering
 
 [pinout]: airbit-Pinout
 [debugging-var-out-of-scope]: Feilsøking-av-programmeringsfeil#bruk-av-variabler-utenfor-scope

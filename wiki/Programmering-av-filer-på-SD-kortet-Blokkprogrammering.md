@@ -108,6 +108,10 @@ void loop()
 }
 ```
 
+## Last ned koden
+
+For å kunne kjøre koden må du laste den ned. Dette gjør du ved å trykke på _Save Arduino Code_ knappen på [BlocklyDuino siden](http://airbit.uit.no:8080). Du kan velge hva filen din skal hete. Gå så til hvor du lastet ned filen og åpne filen med `Arduino IDE`-programmet. Den vil spørre deg om å lage en en mappe med samme navn som filen, godta forespørselen. Du kan så overføre koden til Arduinoen som vanlig, ved å trykke på _Last Opp_ knappen (den høyrepekende pilen). 
+
 ### Test Koden
 
 **Merk:** SD-kortet må være plugget i air:bit når du skrur på strømmen. Du kan ikke sette i SD-kortet mens air:bit er på og kjører. Koden som starter opp SD-kortleseren og åpner filen ligger i `setup`. Dvs., den kjøres bare én gang når air:bit starter opp.

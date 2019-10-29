@@ -38,4 +38,4 @@ Guidene for de forskjellige sensorene vil fortelle deg hvordan verdiene for pinn
 
 [home]: airbit-Programmering
 [led]: airbit-LED-Blinking
-[led-blockly]: airbit-LED-Blinking-blockly
+[led-blockly]: airbit-LED-Blinking-Blokkprogrammering

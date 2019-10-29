@@ -7,7 +7,7 @@ Selv om guidene vil innholde en del kodeeksempler, vil du likevel være nødt ti
 Det er flere måter å programmere på, to av dem er _Kodelinjeprogrammering_ og _Blokkprogrammering_. _Kodelinjeprogrammering_ er den mest vanlige formen for programmering når man skal arbeide innenfor et IT-yrke. _Blokkprogrammering_ derimot blir sett på som lettere å lære ettersom man abstraherer vekk en del av detaljene.
 
 | Steg   |   Kodelinjeprogrammering    | Blokkprogrammering                |
-| ------ |:---------------------------:| ---------------------------------:|
+| ------ |:---------------------------:| :--------------------------------:|
 |   1    |   [Pinout][pinout]          |  [Pinout][pinout]                 |
 |   2    |   [LED-Blinking][led]       |  [LED-Blinking][led-blockly]      |
 |   3    |   [Temperaturlesing][dht]   |  [Temperaturlesing][dht-blockly]  |
@@ -35,8 +35,8 @@ Aller først skal vi ta en titt på pinout skjemaet og forklare hvordan en air:b
 [gps]: Programmering-med-GPS-antenna
 [sd]: Programmering-av-filer-på-SD-kortet
 
-[led-blockly]: airbit-LED-Blinking-Blockly
-[dht-blockly]: Programmering-med-Temperatursensoren-Blockly
-[pm-blockly]: Programmering-med-Støvsensoren-Blockly
-[gps-blockly]: Programmering-med-GPS-antenna-Blockly
-[sd-blockly]: Programmering-av-filer-på-SD-kortet-Blockly
+[led-blockly]: airbit-LED-Blinking-Blokkprogrammering
+[dht-blockly]: Programmering-med-Temperatursensoren-Blokkprogrammering
+[pm-blockly]: Programmering-med-Støvsensoren-Blokkprogrammering
+[gps-blockly]: Programmering-med-GPS-antenna-Blokkprogrammering
+[sd-blockly]: Programmering-av-filer-på-SD-kortet-Blokkprogrammering

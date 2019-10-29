@@ -113,7 +113,7 @@ void loop()
 [library-manager-dht-sensor-library]: Arduino-IDE-Library-Manager-DHTSensorLibrary.png
 [adafruit_sensor-download]: GitHub-Adafruit_Sensor-download.png
 
-[skjermbilde-DHT-blockly]: skjermbilde-DHT-blockly.png
+[skjermbilde-DHT-blockly-finished]: skjermbilde-DHT-blockly.png
 [skjermbilde-get-DHT-blockly]: skjermbilde-get-DHT-blockly.png
-[skjermbilde-seriell-DHT-blockly-finished]: skjermbilde-DHT-blockly-finished.png
+[skjermbilde-seriell-DHT-blockly]: skjermbilde-seriell-DHT-blockly.png
 

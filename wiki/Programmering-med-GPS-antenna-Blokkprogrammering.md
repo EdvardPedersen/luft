@@ -16,9 +16,12 @@ Klikk på den store grønne pilen der det står Download. Husk å ikke åpne fil
 
 Åpne en `Arduino IDE`. I `Arduino IDE` programmet, finn menyen `Sketch`&rarr;`Include library`&rarr;`Add ZIP library` og velg filen du nettopp lastet ned.
 
-## TMP
+## Laste ned og installere air:bit biblioteker helplink
 
-*Merk at vi kaller `!` for **NOT**-operatoren. Dvs. betingelsen leses som: NOT isUseful*
+UiT har laget noen biblioteker for å gjøre air:bit koden mer håndterbar. Vi har to hjelpebiblioteker. Begge kan bli hentet ifra [BlocklyDuino](http://http://airbit.uit.no:8080) siden. Ved å klikke på _Download Project_ knappen, og de forskjellige pop-up vinduene som dukker opp, får man en `.zip` fil ut. Ved å pakke ut filen får du en mappe som inneholder en til `.zip` fil, kalt _lib.zip_. Denne filen må du også pakke ut. Inne i _lib_ mappen vil du finne 2 `.zip` filer. Disse filene er hjelpe bibliotekene. De kan vi installere som vi har gjort på tidligere vis.
+
+Åpne en `Arduino IDE`. I `Arduino IDE` programmet, finn menyen `Sketch`&rarr;`Include library`&rarr;`Add ZIP library` og velg de filene du pakket frem.
+
 ## Kodeblokker helplink
 
 GPS-en forteller oss om den har en gyldig posisjon. I tillegg til å printe ut teksten over USB-ledningen til datamaskinen vil vi bruke LED-lysene for å blinke grønt når vi har kontakt med GPS-satellittene, og blinke rødt når vi ikke får kontakt med satellittene. Dette betyr at vi må gjøre litt sjekking etter feilkoder.
@@ -29,86 +32,122 @@ Vi kan se at de fleste `GPS`-blokkene krever en `GPS_RX` og en `GPS_TX` verdi. D
 
 ![][skjermbilde-update-GPS-blockly]
 
-En tommelfingerregel i programmering er at man bør gjøre håndtering av feil øverst i kodeblokkene sine. Dvs. sjekk først for alle feil. Dette er fordi det som regel er enklere å teste mot spesifikke feilbetingelser. 
-
 Etter denne blokken kan vi være sikre på at vi har fått informasjon fra GPS-en. La oss nå sjekke om vi har en gyldig posisjon. Vi bruker `GPS is Valid`-blokken for dette. Denne blokken returner enten `true` eller `false`, altså er det en sannhetsverdi (`bool`) verdi. Deklarer en variabel med navnet `gpsvalid`, gi den typen `bool` og koble `GPS`-blokken til den.  til `gps`-variabelen for dette. 
 
 Dersom du har oppnådd kontakt med satellitter for å så ha mistet kontakten igjen (f.eks. fordi du går inn i en tunnel, et hus med tykke vegger, o.l.) vil `GPS is Valid`-blokken fortsette å gi `true` som svar, derfor må vi også sjekke om dataen har blitt oppdatert siden siste gang vi leste av. Vi bruker `GPS is Updated`-blokken for dette. Deklarer en ny `bool` variabel som tar imot denne verdien.
 
 ![][skjermbilde-variables-GPS-blockly]
 
-Får at GPS informasjonen skal være nyttig må den være både _Valid_ of _Updated_. For å sjekke om begge variablene er sanne bruker vi en `Logical AND`-blokk, som vi finner under _Logic_ sidefanen. `Logical And` betyr *OG*, dvs. både høyre og venstre betingelse må være `true` for at hele betingelsen skal være `true`.
+En tommelfingerregel i programmering er at man bør gjøre håndtering av feil øverst i koden sine. Dvs. sjekk først for alle feil. Dette er fordi det som regel er enklere å teste mot spesifikke feilbetingelser. 
 
-Trekk en `Logical AND`-blokk ut og koble de to forrige verdiene til den. Deklarer en tredje `bool` variabel som heter `isuseful` som tar in verdien ifra `Logical And`-blokken, slik at verdien blir lagret.
+For at GPS informasjonen skal være nyttig må den være både _Valid_ of _Updated_. Man kan sjekke om begge variablene er sanne bruker ved å bruke en `Logical AND`-blokk, som vi finner under _Logic_ sidefanen. `Logical And` betyr *OG*, dvs. begge betingelse må være `true` for at hele betingelsen skal være `true`.
 
-Hvis dataen ikke er brukbar, trenger vi ikke å gå videre i programmet. Trekk ut en `if - do`-blokk fra _Logic_ sidefanen.
+Trekk en `Logical AND`-blokk ut og koble de forrige to blokkene til den. Deklarer en tredje `bool` variabel som heter `isuseful` som tar in verdien ifra `Logical And`-blokken, slik at verdien blir lagret.
 
-``` cpp
-  if (!(gps.location.isValid() && gps.location.isUpdated())) {
-    // No valid position.
-    // I.e. no GPS fix.
-  }
-```
+![][skjermbilde-and-GPS-blockly]
 
+Hvis dataen ikke er brukbar, trenger vi ikke å gå videre i programmet. Trekk ut en `if - do`-blokk fra _Logic_ sidefanen. Siden vi skal reagere på at `isuseful` ikke skal være sann, må vi transformere verdien for å kunne bruke den riktig i `if - do`-blokken. Vi må få en sann verdi når `isuseful` er usann, og omvendt. Dette gjør vi med en `not`-blokk, som vi finner under _Logic_ sidefanen.
+
+Når vi ikke har brukbar data, har vi lyst til å blinke det røde lyset, for så å starte `loop`-funksjonen på nytt. Hvis vi har brukbar data, blinker vi med det grønne lyset istedet.
+
+Vi kan starte `loop`-funksjonen på nytt med en `Ends Function`-blokken som finnes under _Control_ sidefanen. Denne blokken avslutter funksjonen den er under, men siden `loop`-funksjonen starter på nytt når den blir avsluttet, fungerer den som en type omstart.
+
+![][skjermbilde-check-GPS-blockly]
+
+Nå som vi vet at vi har brukbar data kan vi hente ut informasjonen og skrive det ut over seriellforbindelsen. Informasjonen vi har lyst på er GPS posisjonen, altså lengde- og bredegradene, samt tiden for målingen.
+
+Lengde- og breddegradene hentes ut som variabler av typen `double`. Man får lengdegraden ifra en blokk som heter `GPS Longitude`, og breddegraden ifra `GPS Latitude` blokken.
+
+Tiden får man ifra `Get DateTime`-blokken. Denne returnerer en spesiellt type kalt `AirBitDateTimeClass`. Deklarer en variabel av denne typen og hekt den sammen med `Get DateTime` blokken. 
+
+Lengde- og breddegradene kan man skrive ut over seriellforbindelsen på samme måte som tidligere, men tiden må skrives ut med en egen blokk. Denne blokken heter `Print DateTime`, og finnes under _Air:Bit; GPS_ sidefanen. Hekte _Tid_ variabelen til `Print DateTime` blokken for å skrive ut tidsinformasjonen.
+
+![][skjermbilde-GPS-print-blockly]
+
+Sett på en `Delay`-blokk til slutt for å gi arduinoen litt tid mellom hver måling.
 Følgende kode vil være lik den over, men kan være litt enklere å lese:
-
-``` cpp
-  bool gpsValid = gps.location.isValid();
-  bool gpsUpdated = gps.location.isUpdated();
-  bool isUseful = gpsValid && gpsUpdated;
-  if (!isUseful) {
-    // No valid position.
-    // I.e. no GPS fix.
-  }
-```
-
-Vi lagrer sannhetsverdier (eller påstander) i variabler av type `bool`. I motsetning til `int` (som lagrer heltall) kan `bool`-variabler kun ha verdiene `true` eller `false`.
-
-
-I tilfeller der vi ikke har en gyldig posisjon, har vi ikke kontakt med satellitten. Da ville vi blinke rødt. Husk hvordan vi gjorde det: 
-
-1. Skru på rødt lys. `digitalWrite` med `HIGH` som andre argument.
-1. Vent litt. `delay`
-1. Skru av rødt lys. `digitalWrite` med `LOW` som andre argument.
-
-``` cpp
-  bool gpsValid = gps.location.isValid();
-  bool gpsUpdated = gps.location.isUpdated();
-  bool isUseful = gpsValid && gpsUpdated;
-  if (!isUseful) {
-    // No valid position.
-    // I.e. no GPS fix.
-    Serial.println("No valid GPS position");
-    digitalWrite(LED_RED, HIGH);
-    delay(500);
-    digitalWrite(LED_RED, LOW);
-    return;
-  }
-```
-
-Vi bruker `return`-instruksjonen for å stoppe utføringen av kode inni `loop`-funksjonen. Dette vil få Arduinoen til å hoppe rett til neste gjennomgang av `loop`-funksjonen og starte GPS avlesningen **helt** på nytt igjen. I tilfeller der vi ikke har noe brukbar GPS informasjon, må vi bare vente til vi får et godt signal, så å starte på nytt virker som en god idé.
-
-*Merk at koden over også har med en instruksjon for å skrive ut (over seriell-koblingen til datamaskinen) at vi ikke fikk kontakt.*
-
-Neste steg er: Blinke grønt, og skrive ut GPS dataen over seriell-koblingen til datamaskinen.
-
-Det enkleste først: Blink det grønne LED-lyset for å vise at vi har fått kontakt med nok GPS-satellitter.
-
-`gps.location.lat()` og `gps.location.lng()` gir oss posisjonen i lengde- og breddegrader som desimaltall. I en `Serial.print()`-kommando kan du legge til et argument for å spesifisere antall desimaler bak kommaet. Eksemplet under vil skrive ut posisjonen med `6` desimaler bak kommaet:
-
-``` cpp
-  Serial.print("Latitude: ");
-  Serial.print(gps.location.lat(), 6); // Latitude in degrees
-  Serial.print("\t");
-  Serial.print("Longitude: ");
-  Serial.print(gps.location.lng(), 6); // Longitude in degrees
-  Serial.println();
-```
 
 ## Ferdig
 
 Avhengig av hvilke verdier du skrive ut, hvordan du navngir dine variabler, osv. kan koden din se litt annerledes ut enn her. Men koden bør ligne dette:
 
+![][skjermbilde-GPS-blockly]
+
+![][skjermbilde-GPS-print-blockly]
+
+Kodelinjene bør også se slik ut:
+
+```cpp
+#include <TinyGPS++.h>
+#include <SoftwareSerial.h>
+#include "AirBitUtilsClass.h
+
+#include "AirBitDateTimeClass.h
+
+bool gpsUpdated;
+
+bool gpdValid;
+
+bool isUseful;
+
+double Latitude;
+
+double Longitude;
+
+AirBitDateTimeClass Tid;
+
+#define GPS_RX 7
+#define GPS_TX 6
+
+SoftwareSerial gpsCom(GPS_RX, GPS_TX);
+TinyGPSPlus gps;
+
+AirBitUtilsClass airbitUtils
+
+#define LED_RED A1
+#define LED_GREEN A0
+
+void setup()
+{
+  gpsCom.begin(9600); // Initialize serial communication to GPS antenna
+
+  Serial.begin(9600);
+
+  pinMode(LED_RED, OUTPUT);
+
+  pinMode(LED_GREEN, OUTPUT);
+
+}
+
+
+void loop()
+{
+  gpsCom.listen();
+  airUtils.WaitOnGpsEncoding(gps, gpsCom);
+  gpsUpdated = gps.location.isUpdated();
+  gpdValid = gps.location.isValid();
+  isUseful = ( gpsUpdated && gpdValid );
+  if (isUseful) {
+    Serial.println("Ingen gyldig GPS posisjon");
+    digitalWrite(LED_RED, HIGH);
+    delay(500);
+    digitalWrite(LED_RED, LOW);
+    return;
+
+  }
+  digitalWrite(LED_GREEN, HIGH);
+  delay(500);
+  digitalWrite(LED_GREEN, LOW);
+  Latitude = gps.location.lat();
+  Longitude = gps.location.lng();
+  Tid = airbitUtils.GetDateTime(gps);
+  Serial.println(Latitude);
+  Serial.println(Longitude);
+  Tid.PrintSerial();
+  delay(2500);
+
+}
+```
 
 ## Gå videre
 
@@ -126,12 +165,9 @@ Avhengig av hvilke verdier du skrive ut, hvordan du navngir dine variabler, osv.
 [pinout]: airbit-Pinout
 [debugging-var-out-of-scope]: Feilsøking-av-programmeringsfeil#bruk-av-variabler-utenfor-scope
 
-![][skjermbilde-and-GPS-blockly]
-![][skjermbilde-check-GPS-blockly]
-![][skjermbilde-GPS-blockly]
-
 [skjermbilde-update-GPS-blockly]: skjermbilde-update-GPS-blockly.png
 [skjermbilde-variables-GPS-blockly]: skjermbilde-variables-GPS-blockly.png
 [skjermbilde-and-GPS-blockly]: skjermbilde-and-GPS-blockly.png
 [skjermbilde-check-GPS-blockly]: skjermbilde-check-GPS-blockly.png
+[skjermbilde-GPS-print-blockly]: skjermbilde-GPS-print-blockly.png
 [skjermbilde-GPS-blockly]: skjermbilde-GPS-blockly.png

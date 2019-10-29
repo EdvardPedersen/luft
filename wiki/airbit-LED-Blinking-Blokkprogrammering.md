@@ -1,4 +1,4 @@
-De enkleste komponentene på air:bit er LED lyspærene. Til å starte med skal vi prøve å få dem til å blinke. Du kan senere bruke LED til å vise status på f.eks. GPS signalet eller blinke mens du tar målinger, osv. Det kan være en enkel måte å skjekke om alt er ok mens du går rundt og tar målinger. Husk at air:bit ikke har noen skjerm, og du vil neppe alltids ha med datamaskinen din for å kunne snakke direkte med Arduinoen.
+De enkleste komponentene på air:bit er LED lyspærene. Til å starte med skal vi prøve å få dem til å blinke. Du kan senere bruke LED til å vise status på f.eks. GPS signalet eller blinke mens du tar målinger, osv. Det kan være en enkel måte å sjekke om alt er ok mens du går rundt og tar målinger. Husk at air:bit ikke har noen skjerm, og du vil neppe alltids ha med datamaskinen din for å kunne snakke direkte med Arduinoen.
 
 ## Komme i gang helplink
 
@@ -8,15 +8,15 @@ Hvis du klikker på _Arduino_ fanen kan du se de _tomme_ funksjonene for `setup`
 
 ## Kodeblokker
 
-Hvis vi går tilbake til _Blocks_ fanen, vil vi kunne se forskjellige grupperinger i sidefanen til høyre. En av disse heter _Air:Bit; LED_. Hvis vi åpner denne vil vi se den første blokken vi skal bruke. Blokken heter _LED_.
+Hvis vi går tilbake til _Blocks_ fanen, vil vi kunne se forskjellige grupperinger i sidefanen til venstre. En av disse heter _Air:Bit; LED_. Hvis vi åpner denne vil vi se den første blokken vi skal bruke. Blokken heter _LED_.
 
-Denne blokken slår på et LED-lys som korresponderer med fargen som er skrevet i `PIN` nedtrekksmenyen. Fargen er i starten satt til `GREEN`, som betyr at det grønne lyset kommer til å blinke. Man kan endre fargen ved å trykke på menyen og velge et annet alternativ. På høyre side av blokken ser vi en til blokk med en tall verdi. Den er koblet til en variabel kalt `Delay`. Denne blokken viser hvor lenge lyset skal være på av gangen. _Tallet viser tiden gitt i **millisekunder**._
+Denne blokken slår på et LED-lys som korresponderer med fargen som er skrevet i `PIN` nedtrekksmenyen. Fargen er i starten satt til `GREEN`, som betyr at det grønne lyset kommer til å blinke. Man kan endre fargen ved å trykke på menyen og velge et annet alternativ. På høyre side av blokken ser vi en til blokk med en tallverdi. Den er koblet til en variabel kalt `Delay`. Denne blokken viser hvor lenge lyset skal være på av gangen. _Tallet viser tiden gitt i **millisekunder**._
 
 Grip en av disse blokkene og trekk den ut på skjermen. Hvis vi går tilbake til _Arduino_ fanen vil vi kunne se at koden har forandret seg.
 
-I _Arduino_ fanen kan vi se at både `LED_RED` og `LED_GREEN` ble definert. De ble deklarert når vi trakk ut _LED_ blokken. Om vi tar en titt på pinout skjemaet vil vi se at verdiene til disse variablene korresponderer med _LED_ pinnene. [Klikk her for å se **Pinout-skjemaet**.][pinout]
+I _Arduino_ fanen kan vi se at både `LED_RED` og `LED_GREEN` ble definert. De ble definert når vi trakk ut _LED_ blokken. Om vi tar en titt på pinout skjemaet vil vi se at verdiene til disse variablene korresponderer med _LED_ pinnene. [Klikk her for å se **Pinout-skjemaet**.][pinout]
 
-Hvis vi har lyst til å blinke både med det røde og det grønne LED-lyset kan vi legge til enda en _LED_ blokk. Gå tilbake til _Blocks_ fanen og trekke enda en _LED_ blokk inn i hovedområde, under den forrige blokken. Sett `PIN` fargen til denne blokken til den andre fargen, slik at vi har en `GREEN` og en `RED` blokk. Nå vil lysene blinke annenhver gang. Ved å øke tallet til høyre på blokkene vil lysene være på lengre.
+Hvis vi har lyst til å blinke både med det røde og det grønne LED-lyset kan vi legge til enda en _LED_ blokk. Gå tilbake til _Blocks_-fanen og trekk enda en _LED_ blokk inn i hovedområdet, under den forrige blokken. Sett `PIN` fargen til denne blokken til den andre fargen, slik at vi har en `GREEN` og en `RED` blokk. Nå vil lysene blinke annenhver gang. Ved å øke tallet til høyre på blokkene vil lysene være på lengre.
 
 ![][skjermbilde-LEDs-blockly]
 
@@ -24,11 +24,11 @@ For øyeblikket vil et av lysene alltid være på. Hvis vi har lyst til å unng�
 
 ## Ferdig
 
-Kodeblokkene ser nå noe sånt som det her ut:
+Kodeblokkene ser nå slik ut:
 
 ![][skjermbilde-LEDs-blockly-finished]
 
-Og Kodelinjene under _Arduino_ fanen ser nå noe sånt som dette ut:
+Og Kodelinjene under _Arduino_ fanen ser nå slik ut:
 
 ```cpp
 #define LED_RED A1

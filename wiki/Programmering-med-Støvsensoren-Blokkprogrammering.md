@@ -4,7 +4,7 @@ Som i temperatursensor-eksemplet kommer vi til å demonstrere hvordan vi tar må
 
 ## Ny Sketch
 
-Igjen vil vi starte med en helt fersk tom Sketch. Du kan klikke på `Discard` knappen for å slette den tidligere koden.
+Igjen vil vi starte med en tom Sketch. Du kan klikke på _Discard_ knappen for å slette den tidligere koden. Du kan også trykke på _Save XML_ for å lagre prosjektet til senere.
 
 ## Laste ned bibliotek helplink
 
@@ -13,17 +13,17 @@ Det er viktig at du lagrer (**ikke åpner**) filen. Husk hvor du lagrer filen, v
 
 Etter du har lastet ned biblioteket og lagret filen må vi installere biblioteket i `Arduino IDE`. Åpne en `Arduino IDE`. Klikk i menyen på `Sketch`&rarr;`Include library`&rarr;`Add ZIP library` (punktet under `Manage libraries`). Velg filen du nettopp lastet ned. Om nettleseren din ikke ba deg om å velge hvor filen skulle lagres, vil du mest sannsynligvis finne den under `Downloads` (`Nedlastinger`).
 
-## `loop` helplink
+## Kodeblokker helplink
 
-Som med temperatursensoren, skal vi lese ut målingene fra støvsensoren og skrive dem ut. Støvsensoren tar målinger av to forskjellige partikelstørrelser: 2.5µm og 10µm. Begge tall gir konsentrasjoner som desimaltall. Enheten for verdiene er i `µg/m³` (mikrogram per kubikkmeter)
+Som med temperatursensoren, skal vi lese ut målingene fra støvsensoren og skrive dem ut. Støvsensoren tar målinger av to forskjellige partikelstørrelser: 2.5µm og 10µm. Begge målinger gis som desimaltall. Enheten for verdiene er i `µg/m³` (mikrogram per kubikkmeter)
 
 Trekk ut deklarasjonsblokker for variablene `PM10` og `PM25`, som skal inneholde verdiene til de to målingsverdiene.
 
-Støvmålingsblokken, som vi finner unner _Air:Bit; SDS_ sidefanen er litt spesiellt. Trekk en slik blokk ut i hovedområdet. Den tar inn to pinneverdier og to tekstverdier. I tillegg gir den tilbake en heltallsverdi.
+Støvmålingsblokken, som vi finner under _Air:Bit; SDS_ sidefanen er litt spesiell. Trekk en slik blokk ut i hovedområdet. Den tar inn to pinneverdier og to tekstverdier. I tillegg gir den tilbake en heltallsverdi.
 
 De to pinneverdiene skal samsvare med `SDS` sensorens pinner som vi finner i [pinout skjemaet][pinout]. `PIN_RX` skal være `3` og `PIN_TX` skal være `2`.
 
-De to tekst verdiene skal være variabelnavnene til variablene som skal inneholde sensormålingene. Trekk ut 2 deklarasjonsblokker for variabler. Kall den ene `PM10` og den andre `PM25`. Skriv navnene til variablene inn i `SDS` blokken. 
+De to tekstverdiene skal være navnene til variablene som skal inneholde sensormålingene. Trekk ut 2 deklarasjonsblokker for variabler. Kall den ene `PM10` og den andre `PM25`. Skriv navnene til variablene inn i `SDS` blokken. 
 
 `SDS`-blokken kan feile, så den returnerer en feilverdi som vi lagrer i en variabel. Trekk ut enda en deklarasjonsblokk kalt `error` og sett verdien til å være ulik `0`.
 
@@ -33,17 +33,15 @@ I den tekniske spesifikasjonen til Støvsensoren står det at den kun kan leses 
 
 For å sikre at vi faktisk har en gyldig måleverdi fra sensoren, må vi altså prøve å kjøre `SDS`-blokken om og om igjen helt til feilverdien er lik `0` (dvs. ingen feil). Når vi vil be Arduinoen om å kjøre den samme koden flere ganger bruker vi i programmering en løkke (*loop* på engelsk).
 
-I `C++`, kodespråket til Arduino, finnes det tre typer løkker. I dette tilfellet skal vi benytte oss av *while-do*-løkken. Denne løkken kjører en kommando (eller flere) og repeterer dersom en betinglse er sann. Dette ser slikt ut i blokkprogrammering:
+I koden vår skal vi bruke en *while-do*-løkke. Denne løkken kjører en kommando (eller flere) og repeterer dersom en betinglse er sann. Dette ser slikt ut i blokkprogrammering:
 
 ![][skjermbilde-while-do-blockly]
 
-I kodebiten over ser du at vi sjekker om `error` er ulik `0`. Med én gang `error` er `0`, er vi sikre på at vi har fått gyldige målinger fra Støvsensoren og kan fortsette med å skrive dem ut. Så la oss fylle inn `read`-kommandoen innenfor `while`-`do`-blokken vår.
+I kodebiten over ser du at vi sjekker om `error` er ulik `0`. Med én gang `error` er `0`, er vi sikre på at vi har fått gyldige målinger fra Støvsensoren og kan fortsette med å skrive dem ut. Så la oss fylle inn `SDS`-blokken innenfor `while-do`-blokken vår.
 
 ![][skjermbilde-variables-set-SDS-blockly]
 
-**Merk** at vi deklarer `error` utenfor løkken! [Bruk av variabler utenfor scope][debugging-scopes] er en vanlig feil som lett er gjort når du skriver kode. Gå til [Feilsøking av programmeringsfeil][debugging-scopes] for å vite mer om hvorfor vi flyttet deklarasjonen av `error` utenfor løkken.
-
-Nå som verdiene er hentet må vi skrive dem ut over seriellforbindelsen. Siden Støvsensoren kun kan avleses én gang per sekund er det lurt å bruke en `Delay`-blokk til slutt. Få Arduinoen til å vente i minst ett sekund.
+Nå som verdiene er hentet må vi skrive dem ut over seriell-forbindelsen. Siden Støvsensoren kun kan avleses én gang per sekund er det lurt å bruke en `Delay`-blokk til slutt for å få Arduinoen til å vente i minst ett sekund.
 
 ![][skjermbilde-seriellprint-SDS-blockly]
 
@@ -110,4 +108,5 @@ void loop()
 [skjermbilde-seriellprint-SDS-blockly]: skjermbilde-seriellprint-SDS-blockly.png
 [skjermbilde-variables-declare-SDS-blockly]: skjermbilde-variables1-SDS-blockly.png
 [skjermbilde-variables-set-SDS-blockly]: skjermbilde-variables2-SDS-blockly.png
+[skjermbilde-while-do-blockly]: skjermbilde-while-do-blockly.png
 

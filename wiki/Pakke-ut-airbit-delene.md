@@ -33,7 +33,7 @@ Det følger også med en ledning for å koble Arduino'en til en datamaskin eller
 
 ### Kretskort / Header Shield
 
-air:bit kommer med et kretskort, vil kaller der *header shield*, som er designet spesifikt for air:bit og sensorene som følger med. Det er en blå (*eller grønn*) plate med masse hull og tekst på. Den vil se ut som vist i bildet under.
+air:bit kommer med et kretskort, vil kaller der *header shield*, som er designet spesifikt for air:bit og sensorene som følger med. Det er en blå plate med masse hull og tekst på. Den vil se ut som vist i bildet under.
 
 ![air:bit shield][shield-picture]
 

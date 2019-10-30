@@ -18,11 +18,11 @@ Igjen vil vi starte med en tom Sketch. Du kan klikke på _Discard_ knappen for �
 
 ## Laste ned og installere bibliotek helplink
 
-`SD`-biblioteket er allerede forhåndsinstallert sammen med `Arduino IDE`. Det vil ikke være nødvendig å laste ned noe for dette eksemplet.
+`SD`-biblioteket er forhåndsinstallert sammen med `Arduino IDE`. Det vil ikke være nødvendig å laste ned noe for dette eksemplet.
 
 ## Kodeblokker helplink
 
-Det første vi trenger for å lage teller eksempelet er en teller. Deklarer en `int` variabel med navnet `counter`. Gi variabelen verdien `0`, slik at vi alltids starter programmet med en nullstilt teller.
+Det første vi trenger for å lage tellereksempelet er en teller. Deklarer en `int` variabel med navnet `counter`. Gi variabelen verdien `0`, slik at vi alltid starter programmet med en nullstilt teller.
 
 For at vi skal kunne kjøre programmet kontinuerlig, uten å starte telleren våres på nytt, trenger vi en `while`-`do`-løkke. Vi finner løkken inne i _Control_ sidefanen. En slik løkke vil starte om og om igjen, så lenge kjørebetingelsen dens er sann. Inne i _Logic_ sidefanen finner vi en blokk som heter `Bool`, som gir en sannhetsverdi. Hvis vi kobler en `true` `Bool`-blokk til løkken vil den aldri stoppe.
 

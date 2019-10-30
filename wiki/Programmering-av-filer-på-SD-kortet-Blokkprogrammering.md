@@ -20,14 +20,6 @@ Igjen vil vi starte med en tom Sketch. Du kan klikke på _Discard_ knappen for �
 
 `SD`-biblioteket er allerede forhåndsinstallert sammen med `Arduino IDE`. Det vil ikke være nødvendig å laste ned noe for dette eksemplet.
 
-## tmp
-
-Fra [pinout skjemaet][pinout] ser du at det er flere pinner som kobler SD-kortleseren til Arduinoen. Vi trenger en definisjon for `CS` pinnen i koden vår.
-
-``` cpp
-#define SD_CS_PIN 10
-```
-
 ## Kodeblokker helplink
 
 Det første vi trenger for å lage teller eksempelet er en teller. Deklarer en `int` variabel med navnet `counter`. Gi variabelen verdien `0`, slik at vi alltids starter programmet med en nullstilt teller.

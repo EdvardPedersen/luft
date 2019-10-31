@@ -40,7 +40,7 @@ Dersom du har fått kontakt med satellitter for å så ha mistet kontakten igjen
 
 En tommelfingerregel i programmering er at man bør gjøre håndtering av feil øverst i koden sin. Dvs. sjekk først for alle feil. Dette gjøres fordi det som regel er enklere å teste mot spesifikke feilbetingelser. 
 
-For at GPS informasjonen skal være nyttig må den være både _Valid_ of _Updated_. Man kan sjekke om begge variablene er sanne bruker ved å bruke en `Logical AND`-blokk, som vi finner under _Logic_ sidefanen. `Logical And` betyr *OG*, dvs. begge betingelse må være `true` for at hele betingelsen skal være `true`.
+For at GPS informasjonen skal være nyttig må den være både _Valid_ og _Updated_. Man kan sjekke om begge variablene er sanne bruker ved å bruke en `Logical AND`-blokk, som vi finner under _Logic_ sidefanen. `Logical And` betyr *OG*, dvs. begge betingelse må være `true` for at hele betingelsen skal være `true`.
 
 Trekk en `Logical AND`-blokk ut og koble de forrige to blokkene til den. Deklarer en tredje `bool` variabel som heter `isUseful` som tar inn verdien fra `Logical And`-blokken, slik at verdien blir lagret.
 

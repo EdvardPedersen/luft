@@ -215,7 +215,7 @@ Det enkleste først: Blink det grønne LED-lyset for å vise at vi har fått kon
   Serial.print("\t");
   Serial.print("Longitude: ");
   Serial.print(gps.location.lng(), 6); // Longitude in degrees
-  Serial.println();
+  Serial.println("");
 ```
 
 ## GPS data helplink
@@ -345,7 +345,7 @@ void loop() {
   Serial.print("Longitude: ");
   Serial.print(gps.location.lng(), 6); // Longitude in degrees
   
-  Serial.println();
+  Serial.println("");
 }
 ```
 

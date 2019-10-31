@@ -150,7 +150,7 @@ void loop() {
   file.print("Dette er linje nr.:");
   file.print(" ");
   file.print(counter);
-  file.println();
+  file.println("");
 
   file.flush();
 }
@@ -257,7 +257,7 @@ void loop() {
   file.print("Dette er linje nr.:");
   file.print(" ");
   file.print(counter);
-  file.println();
+  file.println("");
 
   file.flush();
 

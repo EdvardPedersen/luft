@@ -135,7 +135,7 @@ void loop() {
   Serial.print(pm25);
   Serial.print("\t");
   Serial.print(pm10);
-  Serial.println();
+  Serial.println("");
 
   delay(1000);
 }

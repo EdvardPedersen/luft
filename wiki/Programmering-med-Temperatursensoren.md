@@ -102,7 +102,7 @@ Etter disse kommandoene vil den aktuelle verdien for temperatur og fuktighet væ
   Serial.print("\t");
   Serial.print(humidity);
   Serial.print("%");
-  Serial.println();
+  Serial.println("");
 ```
 
 I den tredje linjen over ser du at `\t` skrives ut. I `C++` brukes `\` (backslash) for spesielle tegn. `\t` er et spesiellt tegn kalt tabulator. Det brukes for å skille kolonner i en tabell fra hverandre. I et vanlig tekst-program, som f.eks. Word, vil du skrive et tabulator-symbol ved å trykke Tab-tasten til venstre for `Q` på det norske tastaturet.
@@ -141,7 +141,7 @@ void loop() {
   Serial.print("\t");
   Serial.print(humidity);
   Serial.print("%");
-  Serial.println();
+  Serial.println("");
 
   // Wait 2.5 seconds until next reading.
   delay(2500);

@@ -45,7 +45,7 @@ La oss nå skrive ut verdien til `counter`. Vi legger bare til en kommando til `
 Nå er vi ferdig med å skrive linjen, så nå er rette tiden for å skrive videre på en ny linje. Dette kan vi gjøre ved å bruke `println` kommandoen uten noen argument.
 
 ``` cpp
-  Serial.println();
+  Serial.println("");
 ```
 
 *Merk at det ikke står noe mellom parantesene, men parantesene må fortsatt være der.*
@@ -77,7 +77,7 @@ void loop() {
   // print out Hello World and the counter:
   Serial.print("Hello World! Counter: ");
   Serial.print(counter);
-  Serial.println();
+  Serial.println("");
 
   counter += 1; // Increase counter by 1.
 

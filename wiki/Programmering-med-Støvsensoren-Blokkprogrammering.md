@@ -68,7 +68,7 @@ int error;
 SDS011 sds;
 void setup()
 {
-  sds.begin(PM_TX, PM_RX);
+  sds.begin(SDS_TX, SDS_RX);
 
   Serial.begin(9600);
 

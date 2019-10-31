@@ -32,7 +32,7 @@ Programmet så langt bør se slik ut:
 
 ![][skjermbilde-while-SD-blockly]
 
-Under økningen av telleren kan vi sette in skrivningen til microSD-kortet. For å skrive til kortet trenger vi andre blokker enn `Serial Print`-blokkene. Åpne _Air:bit; SD_ sidefanen. Der finner vi en del blokker som ligner `Serial` blokkene vi brukte tidligere. Trekk ut en `SD Print`-blokk, og en `SD Println`-blokk, og sett dem sammen. Det er viktig at de har samme filnavn og at navnet slutter med `.txt`, men navnet trenger ikke å være `filename.txt`. 
+Under økningen av telleren kan vi sette in skrivningen til microSD-kortet. For å skrive til kortet trenger vi andre blokker enn `Serial Print`-blokkene. Åpne _Air:bit; SD_ sidefanen. Der finner vi en del blokker som ligner `Serial` blokkene vi brukte tidligere. Trekk ut en `SD Print`-blokk, og en `SD Println`-blokk, og sett dem sammen. Det er viktig at de har samme filnavn, ikke har norske eller spesielle bokstaver, er under 8 bokstaver, og at navnet slutter med `.txt`, men navnet trenger ikke å være `filename.txt`. 
 
 Fra [pinout skjemaet][pinout] ser du at det er flere pinner som kobler SD-kortleseren til Arduinoen. Vi trenger `CS` pinnen i kodeblokkene vi skal bruke.
 

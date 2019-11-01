@@ -298,7 +298,6 @@ $(document).ready(function () {
         .addClass("blockquote");
 
     $(".wiki-helplink")
-        .addClass("pull-right")
         .addClass("btn")
         .addClass("btn-link");
 });

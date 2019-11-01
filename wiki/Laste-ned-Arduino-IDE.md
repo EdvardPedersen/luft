@@ -2,7 +2,9 @@ For å starte å programmere med Arduino, må man innstallere [Arduino IDE][Ardu
 
 Gå til nettsiden for **[Ardunio Programmvare][Arduino-Software-Page]**.
 
-### Windows helplink
+# helplink
+
+### Windows
 
 Klikk på `Windows Installer` (den øverste linken) for en helt vanlig installasjon på en Windows PC.
 

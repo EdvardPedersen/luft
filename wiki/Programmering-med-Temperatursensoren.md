@@ -16,7 +16,9 @@ void loop() {
 }
 ```
 
-### Installere `DHT sensor library` biblioteket helplink
+# helplink
+
+### Installere `DHT sensor library` biblioteket
 
 Før vi begynner må vi laste ned og installere et Arduino bibliotek. Tidligere har vi brukt kommandoer som `delay`, `pinMode` og `digitalWrite` som alle er del av standard-biblioteket for Arduino. Vi trenger nye kommandoer for å lese av temperatur fra DHT-sensoren. Disse vil vi finne i et bibliotek som heter `DHT sensor library` som er laget av selskapet Adafruit. *Adafruit er en av de største produsentene for Arduino-utstyr.*
 
@@ -28,7 +30,9 @@ I `Library Manager` som åpner seg, må du nå søke på `DHT sensor library` so
 
 ![Arduino IDE Library Manager: DHT sensor library][library-manager-dht-sensor-library]
 
-### Installere `Adafruit_Sensor` biblioteket helplink
+# helplink
+
+### Installere `Adafruit_Sensor` biblioteket
 
 `DHT sensor library`-biblioteket bruker Adafruit sitt overordnede `Adafruit_Sensor` bibliotek. Dette inneholder informasjon som er til felles for alle Adafruit sine sensorer.
 
@@ -40,7 +44,9 @@ Det er viktig at du lagrer (**ikke åpner**) filen. Husk hvor du lagrer filen, v
 
 Etter du har lastet ned biblioteket og lagret filen må vi installere biblioteket i `Arduino IDE`. Klikk i menyen på `Sketch`&rarr;`Include library`&rarr;`Add ZIP library` (punktet under `Manage libraries`). Velg filen du nettopp lastet ned. Om nettleseren din ikke ba deg om å velge hvor filen skulle lagres, vil du mest sannsynligvis finne den under `Downloads` (`Nedlastinger`).
 
-## Globale definisjoner helplink
+# helplink
+
+## Globale definisjoner
 
 Først må `DHT`-biblioteket inkluderes i Arduino-Sketchen. I `C++` bruker vi `#include` direktivet for dette:
 
@@ -64,7 +70,9 @@ DHT dhtSensor(DHTPIN, DHT22);
 
 *I koden over kalles variabelen `dhtSensor`, men du kan bruke hvilket som helst navn som du har lyst å bruke. Det anbefales å bruke et deskriptivt navn som virker intuitivt å bruke. Merk også at vi bruker konstanten `DHT22`. Fra beskrivelsen som vistes når du installerte DHT-biblioteket kan du se at det finnes flere varianter av DHT-sensorer. air:bit sin sensor er av den nyere `DHT22` varianten.*
 
-## `setup` helplink
+# helplink
+
+## `setup`
 
 I dette eksemplet for programmering med DHT sensoren skal vi bruke en seriell forbindelse med PC-en, så vi må initialisere den serielle forbindelsen, slik vi har gjort tidligere.
 
@@ -72,7 +80,9 @@ I dette eksemplet for programmering med DHT sensoren skal vi bruke en seriell fo
   Serial.begin(9600);
 ```
 
-## `loop` helplink
+# helplink
+
+## `loop`
 
 For hver gjennomgang gjennom `loop`-funksjonen skal vi lese ut måleverdiene fra sensoren, så skrive dem ut over seriell-forbindelsen.
 

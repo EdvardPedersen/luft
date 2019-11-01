@@ -16,14 +16,18 @@ void loop() {
 }
 ```
 
-## Laste ned bibliotek helplink
+# helplink
+
+## Laste ned bibliotek
 
 Akkurat som DHT-biblioteket vi brukte for temperatursensoren, finnes det et bibliotek for støvsensoren. Desverre oppstår det komplikasjoner med de andre sensorene i air:bit når vi bruker denne. Derfor har air:bit teamet laget sin egen versjon for dette biblioteket. Last ned den nyeste, dvs. den øverste, versjonen i listen du finner når du klikker på denne linken: (klikk der det står `airbit-teacher-workshop `) **[SDS011 biblioteket](https://github.com/skolelab/SDS011/releases)**  
 Det er viktig at du lagrer (**ikke åpner**) filen. Husk hvor du lagrer filen, vi må finne frem filen i neste steg.
 
 Etter du har lastet ned biblioteket og lagret filen må vi installere biblioteket i `Arduino IDE`. Klikk i menyen på `Sketch`&rarr;`Include library`&rarr;`Add ZIP library` (punktet under `Manage libraries`). Velg filen du nettopp lastet ned. Om nettleseren din ikke ba deg om å velge hvor filen skulle lagres, vil du mest sannsynligvis finne den under `Downloads` (`Nedlastinger`).
 
-## Globale definisjoner helplink
+# helplink
+
+## Globale definisjoner
 
 `Arduino IDE` kommer med en del små hjelper-bibliotek som allerede er installert på forhånd. Ett av disse er `SoftwareSerial`-biblioteket. Støvsensoren sender målingene over ledningen til Arduinoen på lignende måte som Arduinoen 'snakker' med PC-en over USB-ledningen. `SoftwareSerial` tillater å lage en seriell forbindelse over pinner på Arduinoen i stedet for USB-ledningen, så derfor bruker vi følgende `#include` direktiv:
 
@@ -50,7 +54,9 @@ Vi må nå lage en global variabel for tilkoblingen til Støvsensoren. Denne gan
 SDS011 sds;
 ```
 
-## `setup` helplink
+# helplink
+
+## `setup`
 
 Akkurat som kommunikasjonen med PC-en din, må vi også initialisere kommunikasjonen med støvsensoren. Vi bruker `begin`-kommandoen som hører til `sds` variabelen. Den tar imot TX- og RX-pinnen som sensoren er koblet til med som argumenter.
 
@@ -64,7 +70,9 @@ Vi skal også skrive ut målingene over seriell-tilkoblingen til datamaskinen.
   Serial.begin(9600);
 ```
 
-## `loop` helplink
+# helplink
+
+## `loop`
 
 Som med temperatursensoren, skal vi lese ut målingene fra støvsensoren og skrive dem ut. Støvsensoren tar målinger av to forskjellige partikelstørrelser: 2.5µm og 10µm. Begge tall gir konsentrasjoner som desimaltall. Enheten for verdiene er i `µg/m³` (mikrogram per kubikkmeter)
 

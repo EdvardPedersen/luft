@@ -1,6 +1,9 @@
 De enkleste komponentene på air:bit er LED lyspærene. Til å starte med skal vi prøve å få dem til å blinke. Du kan senere bruke LED til å vise status på f.eks. GPS signalet eller blinke mens du tar målinger, osv. Det kan være en enkel måte å sjekke om alt er ok mens du går rundt og tar målinger. Husk at air:bit ikke har noen skjerm, og du vil neppe alltids ha med datamaskinen din for å kunne snakke direkte med Arduinoen.
 
-## Komme i gang helplink
+# helplink
+
+## Komme i gang
+
 
 Vi starter med en helt ny Sketch. Åpne opp en ny fane med [BlocklyDuino](http://airbit.uit.no:8080), som er _Blokkprogrammerings_-verktøyet vi skal bruke.
 

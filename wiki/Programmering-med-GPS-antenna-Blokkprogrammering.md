@@ -22,7 +22,9 @@ UiT har laget noen biblioteker for å gjøre air:bit koden mer håndterbar. Vi h
 
 Åpne en `Arduino IDE`. I `Arduino IDE` programmet, finn menyen `Sketch`&rarr;`Include library`&rarr;`Add ZIP library` og velg de filene du pakket ut.
 
-## Kodeblokker helplink
+# helplink
+
+## Kodeblokker
 
 GPS-en forteller oss om den har en gyldig posisjon. I tillegg til å skrive ut teksten over USB-ledningen til datamaskinen, vil vi bruke LED-lysene for å blinke grønt når vi har kontakt med GPS-satellittene og blinke rødt når vi ikke får kontakt. Dette betyr at vi må gjøre litt sjekking etter feilkoder.
 

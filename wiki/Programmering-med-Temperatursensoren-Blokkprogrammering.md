@@ -6,7 +6,9 @@ Vi kommer til å lage et Blokkprogram hvor vi skriver ut temperatur- og fuktighe
 
 Igjen vil vi starte med en tom Sketch. Du kan klikke på _Discard_ knappen for å slette den tidligere koden. Du kan også trykke på _Save XML_ for å lagre prosjektet til senere.
 
-### Installere `DHT sensor library` biblioteket helplink
+# helplink
+
+### Installere `DHT sensor library` biblioteket
 
 Før vi begynner må vi laste ned og installere et Arduino bibliotek. Tidligere har vi brukt kommandoer som `delay`, `pinMode` og `digitalWrite` som alle er del av standard-biblioteket for Arduino. Vi trenger nye kommandoer for å lese av temperatur fra DHT-sensoren. Disse vil vi finne i et bibliotek som heter `DHT sensor library` som er laget av selskapet Adafruit. *Adafruit er en av de største produsentene for Arduino-utstyr.*
 
@@ -18,7 +20,9 @@ I `Library Manager` som åpner seg, må du nå søke på `DHT sensor library` so
 
 ![Arduino IDE Library Manager: DHT sensor library][library-manager-dht-sensor-library]
 
-### Installere `Adafruit_Sensor` biblioteket helplink
+# helplink
+
+### Installere `Adafruit_Sensor` biblioteket
 
 `DHT sensor library`-biblioteket bruker Adafruit sitt overordnede `Adafruit_Sensor` bibliotek. Dette inneholder informasjon som er til felles for alle Adafruit sine sensorer.
 
@@ -30,7 +34,9 @@ Det er viktig at du lagrer (**ikke åpner**) filen. Husk hvor du lagrer filen, v
 
 Etter du har lastet ned biblioteket og lagret filen må vi installere biblioteket i `Arduino IDE`. Klikk i menyen på `Sketch`&rarr;`Include library`&rarr;`Add ZIP library` (punktet under `Manage libraries`). Velg filen du nettopp lastet ned. Om nettleseren din ikke ba deg om å velge hvor filen skulle lagres, vil du mest sannsynligvis finne den under `Downloads` (`Nedlastinger`).
 
-## Kodeblokker helplink
+# helplink
+
+## Kodeblokker
 
 For hver gjennomgang gjennom `loop`-funksjonen (som vi ser i _Arduino_-fanen) skal vi lese ut måleverdiene fra sensoren, for så skrive dem ut over seriell-forbindelsen.
 

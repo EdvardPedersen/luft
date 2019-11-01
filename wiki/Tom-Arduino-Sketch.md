@@ -18,17 +18,23 @@ void loop() {
 
 I koden over ser vi to *funksjoner* (også kalt *sub-rutiner*). De er kalt `setup` og `loop`. Du kan se navnene etter kodeordet `void`.
 
-### Kodeblokker mellom `{` og `}` helplink
+# helplink
+
+### Kodeblokker mellom `{` og `}`
 
 Koden som hører til funksjonen ligger blant et par med `{` og `}` (krøllparanteser). Du skriver dem ved å trykke `AltGr` og `7` eller `0` samtidig på et vanlig nordisk tastatur. I programmering kaller vi alt som står mellom et par med krøllparanteser for en *kodeblokk*.
 
-### Kommentarer `//` helplink
+# helplink
+
+### Kommentarer `//`
 
 Når vi ser i koden som står mellom krøllparantesene til `setup` og `loop` ser vi at begge blokkene hver inneholder en linje som starter med to skråstreker (`//`).
 
 Uansett hvor i koden, så vil to skråstreker `//` alltids starte en linje-kommentar. En kommentar er villkårlig tekst som ikke tolkes av datamaskinen, og som derfor bare er forklarende for oss mennesker. Det er en god idé å skrive kommentarer i koden din, slik at du etterpå fortsatt kan forstå hva du gjorde.
 
-### Funksjonen `setup` helplink
+# helplink
+
+### Funksjonen `setup`
 
 Funksjonen `setup` er funksjonen vi bruker for å starte opp Arduinoen og sette den opp til å gjøre det vi vil. Dette er et steg som kjøres én gang når vi kobler til strømmen til Arduinoen. Koden vi plasserer her kan sammenlignes med det din datamaskin gjør når den starter opp, før du blir bedt om å skrive inn passordet.
 
@@ -36,7 +42,9 @@ Akkurat nå ser vi at det ikke er noen instruksjoner i blokken som utgjør denne
 
 > put your setup code here, to run once:
 
-### Funksjonen `loop` helplink
+# helplink
+
+### Funksjonen `loop`
 
 Etter Arduinoen har startet opp vil den starte å kjøre instruksjonene i `loop`-funksjonen. Disse vil bli kjørt om og om igjen i en evig loop.
 

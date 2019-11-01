@@ -1,6 +1,8 @@
 Nå må vi sette opp `Arduino IDE` til å snakke med mikrokontrolleren vår. Vi vil også sette noen innstillinger som vil gjøre det enkere å programmere og finne mulige feil i koden senere.
 
-## Valg av Port for din Arduino helplink
+# helplink
+
+## Valg av Port for din Arduino
 
 Nå er det på tide å bruke USB-ledningen til Arduino'en og plugge den inn i PCen på en helt vanlig USB-port. Om du har skrudd på lyden på maskinen din, vil du høre den vanlige lyden PCer gir fra seg når du plugger inn nye enheter.
 
@@ -18,7 +20,9 @@ I den samme menyen, i punket over Porten, står det også hvilken type Arduino s
 
 På Windows maskiner vil operativsystemet huske din Arduino. Så lenge du bruker samme Arduino på din PC, vil COM-porten ikke endre seg om du plugger inn Arduinoen på nytt. Merk at port vil forsvinne som valgmulighet fra menyen dersom du kobler fra Arduinoen fra datamaskinen.
 
-## Innstillinger helplink
+# helplink
+
+## Innstillinger
 
 Vi kommer til å bruke mye tid med leke oss med Arduino-kode i `Arduino IDE`. For å være mest produktiv, er det lurt å sette opp noen innstillinger for programmet nå, slik at ting blir litt mere oversiktlig og enklere å håndtere.
 

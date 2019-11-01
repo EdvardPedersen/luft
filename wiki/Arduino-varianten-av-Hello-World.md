@@ -2,7 +2,9 @@ Når man lærer et nytt programmeringsspråk er det vanlig å lage et program so
 
 I forrige steg så vi at en tom sketch inneholder to funksjoner `setup` og `loop`. Vi må skrive instruksjoner for begge funksjonene for dette eksemplet til å funke.
 
-### Hvordan skrive ut tekst på en Arduino helplink
+# helplink
+
+### Hvordan skrive ut tekst på en Arduino
 
 Når du kobler til en Arduino til datamaskinen kan vi sende data fra Arduinoen til datamaskeinen og ledningen. Dette kalles *Seriell kommunikasjon*.
 
@@ -14,7 +16,9 @@ Mens denne måten av kommunikasjon ikke alltid er særlig nyttig i en virkelig b
 
 Om du klikker på knappen nå, vil antageligvis ingenting vises i vinduet som kommer opp. Detter er fordi vi ikke ennå har sagt at Arduinoen skal gjøre noe, og derfor vil den ikke sende noe data over seriell-porten heller.
 
-### `setup` helplink
+# helplink
+
+### `setup`
 
 ``` cpp
 void setup() {
@@ -34,7 +38,9 @@ Dersom man leser dokumentasjonen på nettet vil man se at seriell kommunikasjon 
 
 **Merk** også det avsluttende semi-kolonet `;`. `;` avslutter en kommando og **må** skrives. Siden datamaskinen har semi-kolonet for å finne slutten av en kommando, kan man godt bruke flere linjer for en kommando. Man kan også skrive flere kommandoer etter hverandre på én linje. *Men selv om dette er mulig, er det skjeldent en go idé å gjøre det.*
 
-### `loop` helplink
+# helplink
+
+### `loop`
 
 ``` cpp
 void loop() {
@@ -50,7 +56,9 @@ Først bruker vi kommandoen `Serial.println`. `println` er en forkortelse for `p
 
 Neste kommando er `delay`. `delay` vil får Arduinoen til å stoppe og pause for ett gitt antall millisekunder før den fortsetter å jobbe. Argumentet er verdien `1000`, dvs. 1000 millsekunder, eller 1 sekund. Denne kommandoen vil altså få Arduinoen til å pause i ett sekund etter den har skrevet ut teksten i den forrige kommandoen.
 
-### Upload og kjør helplink
+# helplink
+
+### Upload og kjør
 
 Klikk på `Upload` (`Laste opp`) knappen til venstre over teksteditoren. Vent til `Arduino IDE` er ferdig å bygge koden og sender den opp til Arduinoen. Når den viser at alt gikk bra, klikk på `Serial Monitor` knappen.  
 Om du har gjort alt rett vil du se teksten `"Hello World!` bli printet ut om og om igjen med ett sekunds mellomrom.

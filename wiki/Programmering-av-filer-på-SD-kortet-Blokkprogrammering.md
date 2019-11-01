@@ -16,11 +16,15 @@ Dette vil ligne veldig på [kodeeksemplet om variabler og telling i Arduino][cou
 
 Igjen vil vi starte med en tom Sketch. Du kan klikke på _Discard_ knappen for å slette den tidligere koden. Du kan også trykke på _Save XML_ for å lagre prosjektet til senere.
 
-## Laste ned og installere bibliotek helplink
+# helplink
+
+## Laste ned og installere bibliotek
 
 `SD`-biblioteket er forhåndsinstallert sammen med `Arduino IDE`. Det vil ikke være nødvendig å laste ned noe for dette eksemplet.
 
-## Kodeblokker helplink
+# helplink
+
+## Kodeblokker
 
 Det første vi trenger for å lage tellereksempelet er en teller. Deklarer en `int` variabel med navnet `counter`. Gi variabelen verdien `0`, slik at vi alltid starter programmet med en nullstilt teller.
 

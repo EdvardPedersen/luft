@@ -16,7 +16,9 @@ void loop() {
 }
 ```
 
-## Laste ned og installere `TinyGPS++` biblioteket helplink
+# helplink
+
+## Laste ned og installere `TinyGPS++` biblioteket
 
 Igjen skal vi bruke et bibliotek du ikke finner i `Library Manager`. Klikk på følgende link for å laste ned: **[TinyGPS++ Biblioteket][tiny-gpp-dl-link]**
 
@@ -26,7 +28,9 @@ Klikk på den store grønne pilen der det står Download. Husk å ikke åpne fil
 
 I `Arduino IDE`, finn menyen `Sketch`&rarr;`Include library`&rarr;`Add ZIP library` og velg filen du nettopp lastet ned.
 
-## Globale definisjoner helplink
+# helplink
+
+## Globale definisjoner
 
 I likhet med `SDS011`-biblioteket du brukte for støvsensoren, bruker også `TinyGPS++` `SoftwareSerial`-biblioteket. Navnet for `#include` direktivet for `TinyGPS++`-biblioteket er `<TinyGPS++.h>`. Legg til begge `#include`-direktivene i toppen av sketchen din.
 
@@ -48,7 +52,9 @@ Til slutt må vi også lage en variabel som representerer selve sensoren. Her br
 TinyGPSPlus gps;
 ```
 
-## `setup` helplink
+# helplink
+
+## `setup`
 
 Husk at vi må bruke `pinMode`-kommandoen for å aktivere kontroll over LED-lysene på Arduinoen. Husk at `OUTPUT` skal brukes som andre argument (i tillegg til hvilken pinne du skal aktivere).
 
@@ -60,7 +66,9 @@ Deretter må vi starte opp kommunikasjonen med GPS-antennen. Dette er også en h
   gpsCom.begin(9600);
 ```
 
-## `loop` helplink
+# helplink
+
+## `loop`
 
 GPS-en forteller oss om den har en gyldig posisjon. I tillegg til å printe ut teksten over USB-ledningen til datamaskinen vil vi bruke LED-lysene for å blinke grønt når vi har kontakt med GPS-satellittene, og blinke rødt når vi ikke får kontakt med satellittene. Dette betyr at vi må gjøre litt sjekking etter feilkoder.
 
@@ -218,7 +226,9 @@ Det enkleste først: Blink det grønne LED-lyset for å vise at vi har fått kon
   Serial.println("");
 ```
 
-## GPS data helplink
+# helplink
+
+## GPS data
 
 GPS-antennen er komponenten med mest tilgjengelig informasjon. Du kan se hva du kan hente ut i listen under. Du har mulighet til å selv eksperimentere med hva du kan få ut av GPS-en. Posisjon og tid vil være mest nyttig for målinger du skal gjøre med air:bit. Men det er alltids gøy å leke seg med de andre verdiene her også.
 

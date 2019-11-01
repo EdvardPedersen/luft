@@ -174,6 +174,5 @@ void loop() {
 [adafruit-sensor-latest]: https://github.com/adafruit/Adafruit_Sensor/releases/latest
 
 [manage-libraries-menu]: Arduino-IDE-Manage-Library.png
-[library-manager-simple-dht]: Arduino-IDE-Library-Manager-SimpleDHT.png
 [library-manager-dht-sensor-library]: Arduino-IDE-Library-Manager-DHTSensorLibrary.png
 [adafruit_sensor-download]: GitHub-Adafruit_Sensor-download.png

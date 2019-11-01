@@ -18,6 +18,12 @@ Noen biblioteker må bli hentet ned fra eksterne kilder, og installert på et an
 
 Linken igjen: [https://github.com/EdvardPedersen/luft/releases/tag/v.0.0.1](https://github.com/EdvardPedersen/luft/releases/tag/v.0.0.1 "airbit biblioteker")
 
+Filene som skal lastes ned heter:
+- Adafruit_Sensor
+- AirBitDateTimeClass
+- SDS011-airbit-teacher-workshop
+- TinyGpsPlus
+
 Etter du har lastet ned bibliotekene og lagret filene må vi installere bibliotekene i `Arduino IDE`. Klikk i menyen på `Sketch`&rarr;`Include library`&rarr;`Add ZIP library` (punktet under `Manage libraries`). Velg en av filene du nettopp lastet ned. Gjør dette for alle filene du lastet ned.
 
 _**Merk:** Om nettleseren din ikke ba deg om å velge hvor filene skulle lagres, vil du mest sannsynligvis finne dem under `Downloads` (`Nedlastinger`)._

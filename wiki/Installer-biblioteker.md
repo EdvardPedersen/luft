@@ -14,7 +14,7 @@ I `Library Manager` som åpner seg, må du nå søke på `DHT sensor library` so
 
 # Eksterne (`.zip`) biblioteker
 
-Noen biblioteker må bli hentet ned fra eksterne kilder, og installert på et annet vis enn `DHT sensor library`-biblioteket. Gå til [denne linken](https://github.com/EdvardPedersen/luft/releases/tag/v.0.0.1) og last ned en utgave av hver av `.zip` filene under **Assets**. 
+Noen biblioteker må bli hentet ned fra eksterne kilder, og installert på et annet vis enn `DHT sensor library`-biblioteket. Gå til [denne linken](https://github.com/EdvardPedersen/luft/releases/tag/v.0.0.1). Du skal ikke laste ned `Source` filene, men alle de andre filene under **Assets** i sise _release_ skal lastes ned. 
 
 Linken igjen: [https://github.com/EdvardPedersen/luft/releases/tag/v.0.0.1](https://github.com/EdvardPedersen/luft/releases/tag/v.0.0.1 "airbit biblioteker")
 

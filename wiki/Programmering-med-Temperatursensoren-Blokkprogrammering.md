@@ -38,7 +38,7 @@ Til å starte med trenger vi to variabler for å lagre måleverdiene (en for tem
 
 Temperatur og fuktighet er verdier som representeres som desimaltall. F.eks. et vanlig digitalt termometer vil vise temperatur som f.eks. `20.7°C`. Fuktighet måles som relativ fuktighet i `%`, f.eks. `41.2% RH`. Variabler for å lagre desimaltall må bruke datatypen `float`. *`float` er en forkortelse for `floating-point decimal number` og det er slik en datamaskin vanligvis håndterer desimaltall.*
 
-Gå inn i sidefanen _Variables_ og hent ut to `Declare Variable` blokker. Gi begge typen `float` og gi dem navnene `temperature` og `humidity`. *Merk at variablene kan navngis hvordan som helst.*
+Gå inn i sidefanen _Variables_ og hent ut to `Declare Variable` blokker. Gi begge typen `float` og gi dem navnene `temperature` og `humidity`. *Merk at variablene kan navngis fritt, med unntak av norske bokstaver og mellomrom.*
 
 I sidefanen _Air:Bit; DHT_ finner vi blokkene: `Get DHT22 Temperature` og `Get DHT22 Humidity`. Koble `Get DHT22 Temperature` til `Declare Variable`-blokken som har _temperature_ variabelen og koble den andre blokken til _humidity_ deklarasjonsblokken.
 

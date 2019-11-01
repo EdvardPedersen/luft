@@ -72,7 +72,7 @@ Nå må du bestemme deg for et navn på filen. Filnavnet er det du vil se i Filu
 
 I koden over ser du deklarasjonen av variabelen `filename`. Firkantparantesene skrives rett **etter** navnet. Verdien er bokstavene `testfile.txt`, og som vanlig står tekst mellom to anførelsestegn `"`.
 
-I koden over er filnavnet `testfile.txt` valgt, men du kan bruke hvilket navn du vil (igjen unngår vinorske bokstaver). Å la filnavnet slutte med `.txt` er veldig vanlig, og vil automatisk fortelle til datamaskinen din at du mener å lagre vanlig tekst i filen.
+I koden over er filnavnet `testfile.txt` valgt, men du kan bruke hvilket navn du vil (igjen unngår vi norske bokstaver, og holder navnet under 8 bokstaver). Å la filnavnet slutte med `.txt` er veldig vanlig, og vil automatisk fortelle til datamaskinen din at du mener å lagre vanlig tekst i filen.
 
 Lage så en ny fil på SD-kortet. Dette gjøres med kommandoen `SD.open`. Kommandoen tar først imot filnavnet, og så en *modus*. Filer kan åpnes for lesing, skriving, eller begge deler. Koden ser slik ut:
 

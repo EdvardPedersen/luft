@@ -7,6 +7,7 @@
   - [Arduino programmering][intro-programming]
   - [air:bit programmering][airbit-programming]
   - [Feilsøking][error-debugging]
+  - [Lese data inn i Excel][excel-parsing]
 - [Pinout][pinout]
 - [Dataformat][data-format]
 
@@ -19,6 +20,7 @@
 [error-debugging]: Feilsøking-av-programmeringsfeil
 [pinout]: airbit-Pinout
 [data-format]: Dataformat
+[excel-parsing]: lese-data-inn-i-excel
 
 [ex-sd]: airbit-memory-card-test
 [ex-allsensors]: airbit-all-sensors

@@ -6,6 +6,7 @@ Stegene for denne guiden:
 1. [Start `Arduino IDE`][start-arduino-ide]
 1. [Konfigurasjon av `Arduino IDE`][config-arduino-ide]
 1. [Laste opp tom sketch][upload-empty-sketch]
+1. [Installer biblioteker][install-libraries]
 
 ### Steg 1
 
@@ -16,3 +17,4 @@ Klikk **[her][install]** for å gå til første steg i Guiden:
 [start-arduino-ide]: Start-Arduino-IDE
 [config-arduino-ide]: Konfigurasjon-av-Arduino-IDE
 [upload-empty-sketch]: Laste-opp-tom-sketch-til-Arduinoen
+[install-libraries]: Installer-biblioteker

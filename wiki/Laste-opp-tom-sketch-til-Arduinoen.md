@@ -33,10 +33,11 @@ Du har nå fullført oppsett av din datamaskin og `Arduino IDE`. Du er nå klar 
 
 &uarr; [Gå til **innholdsfortegnelsen**][setup-home]  
 &larr; [Gå tilbake til forrige steg: **Konfigurasjon av Arduino IDE**][config-arduino-ide]  
-&darr; [Gå til: **Guider**][guides-home]  
+&rarr; [Gå til neste steg: **Installer biblioteker**][install-libraries]  
 
 [setup-home]: Oppsett-for-programmering
 [config-arduino-ide]: Konfigurasjon-av-Arduino-IDE
-[guides-home]: airbit-Guider
+[install-libraries]: Installer-biblioteker
+
 [upload-empty]: Arduino-IDE-Upload-empty.png
 [upload-empty-complete]: Arduino-IDE-Upload-empty-complete.png

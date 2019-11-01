@@ -20,7 +20,7 @@
 [error-debugging]: Feilsøking-av-programmeringsfeil
 [pinout]: airbit-Pinout
 [data-format]: Dataformat
-[excel-parsing]: lese-data-inn-i-excel
+[excel-parsing]: Lese-data-inn-i-Excel
 
 [ex-sd]: airbit-memory-card-test
 [ex-allsensors]: airbit-all-sensors

@@ -79,21 +79,21 @@ Kodelinjene bør også se slik ut:
 ```cpp
 #include <TinyGPS++.h>
 #include <SoftwareSerial.h>
-#include "AirBitUtilsClass.h
+#include <AirBitUtilsClass.h>
 
-#include "AirBitDateTimeClass.h
+#include <AirBitDateTimeClass.h>
 
-bool gpsUpdated;
+int gpsUpdated;
 
-bool gpdValid;
+int gpsValid;
 
-bool isUseful;
+int isUseful;
 
-double Latitude;
+int Latitude;
 
-double Longitude;
+int Longitude;
 
-AirBitDateTimeClass Tid;
+int Tid;
 
 #define GPS_RX 7
 #define GPS_TX 6
@@ -101,7 +101,7 @@ AirBitDateTimeClass Tid;
 SoftwareSerial gpsCom(GPS_RX, GPS_TX);
 TinyGPSPlus gps;
 
-AirBitUtilsClass airbitUtils
+AirBitUtilsClass airbitUtils;
 
 #define LED_RED A1
 #define LED_GREEN A0
@@ -122,11 +122,11 @@ void setup()
 void loop()
 {
   gpsCom.listen();
-  airUtils.WaitOnGpsEncoding(gps, gpsCom);
+  airbitUtils.WaitOnGpsEncoding(&gps, &gpsCom);
   gpsUpdated = gps.location.isUpdated();
-  gpdValid = gps.location.isValid();
-  isUseful = ( gpsUpdated && gpdValid );
-  if (isUseful) {
+  gpsValid = gps.location.isValid();
+  isUseful = ( gpsUpdated && gpsValid );
+  if (!isUseful) {
     Serial.println("Ingen gyldig GPS posisjon");
     digitalWrite(LED_RED, HIGH);
     delay(500);

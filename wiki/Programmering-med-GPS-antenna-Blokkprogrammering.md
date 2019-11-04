@@ -95,7 +95,7 @@ int Latitude;
 
 int Longitude;
 
-int Tid;
+AirBitUtilsClass Tid;
 
 #define GPS_RX 7
 #define GPS_TX 6

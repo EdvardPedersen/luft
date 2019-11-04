@@ -6,6 +6,11 @@ Du vil legge merke til at microSD-kortet kommer med en adapter. Det lille microS
 
 Når du plugger inn SD-kortet inn i en PC, vil det dukke opp som en harddisk i Filutforskeren (`Windows Explorer`, eller `Min datamaskin`, eller `This PC`) akkurat som en vanlig USB-minnebrikke også ville gjort.
 
+- Filnavn kan ikke være lengre en 12 bokstaver.
+- Filnavn må avslutte med en filtype forkortelse (f.eks. `.txt`, `.csv`).
+	- Lengden på endelsen telles som en del av de 12 bokstavene til navnet.
+- Filnavn kan kun inneholde engelske bokstaver (ingen `æ`, `ø`, `å`).
+
 ## Beskrivelse av eksemplet
 
 I dette eksemplet skal du først lage en ny fil på SD-kortet. Deretter skal du skrive tekst inn i den filen. For hver gjennomgang gjennom `loop` skal du øke en teller og skrive ned verdien av telleren.

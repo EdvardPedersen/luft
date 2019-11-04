@@ -74,6 +74,8 @@ File file;
 AirBitUtilsClass airbitUtils;
 void setup()
 {
+  Serial.begin(9600);
+
   // Activate CS-Pin control
   pinMode(SD_CS_PIN, OUTPUT);
 
@@ -86,11 +88,11 @@ void setup()
   if (SD.exists(filename)) {
     // Open existing file for writing and append
     file = SD.open(filename, O_WRITE | O_APPEND);
-    file.println("--------------------");
-    file.println("Filen ble åpnet på nytt.");
+    Serial.println("--------------------");
+    Serial.println("Filen ble åpnet på nytt.");
   } else {
     file = SD.open(filename, O_CREAT | O_WRITE);
-    file.println("Dette er den første linjen i filen.");
+    Serial.println("Filen ble åpnet for første gang.");
   }
   file.flush(); // Force saving data to SD-card
 

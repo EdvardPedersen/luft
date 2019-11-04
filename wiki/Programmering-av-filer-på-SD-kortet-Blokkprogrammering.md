@@ -64,7 +64,7 @@ Kodelinjene skal se slik ut:
 ```cpp
 #include <SD.h>
 
-#include "AirBitUtilsClass.h
+#include <AirBitUtilsClass.h>
 
 int counter;
 
@@ -102,8 +102,8 @@ void loop()
   counter = 0;
   while (true) {
     counter = counter + 1;
-    file.print("Dette er line nr.:");
-    file.print(counter);
+    file.print("Dette er line nr.: ");
+    file.println(counter);
     file.flush();
     delay(1000);
   }

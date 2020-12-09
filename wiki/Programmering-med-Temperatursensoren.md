@@ -79,6 +79,11 @@ I dette eksemplet for programmering med DHT sensoren skal vi bruke en seriell fo
 ``` cpp
   Serial.begin(9600);
 ```
+Merk:
+``` cpp
+  dhtSensor.begin();
+```
+Kreves også i `setup` for nyere versjoner av bibliotekene.
 
 # helplink
 
